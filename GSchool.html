@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Add Map</title>
+    <title>Google Maps JavaScript API v3 Example: Info Window</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style>
+        /* Always set the map height explicitly to define the size of the div element that contains the map.*/
+        #map {
+          height: 500px;
+          width: 500px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+
+        }
+                        
+        body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+          
+        }
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    </style>
+  </head>
+  <body>
+    <h2>The Elementary and Secondary Schools in Nanaimo with the Google Maps API</h2><br>
+    <!--<h3>My Google Maps Demo</h3>-->
+    <div id="map"></div>
+    
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsF1aJmfsIohOhpZkOdQkwvRM-v2PLeuw&callback=initMap&v=weekly"    
+      defer >
+    </script>
+
+    <script>// This example displays a marker.
+    // When the user clicks the marker, an info window opens.
+      function initMap() {
+        const VIU = { lat: 49.15807, lng: -123.96408};
+        const NDSS = { lat: 49.162685506000059, lng: -123.961025545999973};
+        
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 13,
+          center: VIU,
+          mapTypeId: "hybrid",
+          scaleControl:true,   
+          
+        });
+
+        //Add geojson population census tract
+        map.data.loadGeoJson('Images/populationG.geojson');
+        map.data.setStyle({
+            fillColor: 'orange',
+            strokeWeight: 0.2,
+            fillOpacity:0.2,
+          });
+
+        //Add circle around schools
+        var schoolCircle=new google.maps.Circle({
+        center:NDSS,
+        radius:1500,
+        strokeColor:"#FF0000",
+        strokeOpacity:0.8,
+        fillColor:"#00FF00",
+        fillOpacity:0.3,
+        map,
+        });
+        
+        //createMarker('JOHN BARSBY COMMUNITY SCHOOL <p><img src="images/JOHN_BARSBY_COMMUNITY_SCHOOL.jpg" style="width:60px; height:40px;" ></p>',-123.96408,49.15807).setMap(map);
+        //Set arguments for the school and add the school's marker to the map: call setMap();
+        createMarker('FAIRVIEW ELEMENTARY <p><img src="Images/FAIRVIEW_ELEMENTARY.jpg" style="width:60px; height:40px;" class="center" ></p>',-123.955585545999952,49.165871512000081).setMap(map);
+        createMarker('GEORGIA AVENUE ELEMENTARY <p><img src="Images/GEORGIA_AVENUE_ELEMENTARY.png" style="width:60px; height:40px;" class="center" ></p>',-123.952586541999949,49.153468512000074).setMap(map);
+        createMarker('PAULINE HAARER ELEMENTARY <p><img src="Images/PAULINE_HAARER_ELEMENTARY.png" style="width:60px; height:40px;" class="center" ></p>',-123.943225544999962,49.168455513000026).setMap(map);
+        createMarker('CONTINUING ED SD 68 <p><img src="Images/CONTINUING_ED_SD_68.png" style="width:60px; height:40px;" class="center" ></p>',-123.961025544999984,49.160975506000057).setMap(map);
+        createMarker('MALASPINA INTERNATIONAL HIGH SCHOOL <p><img src="Images/MALASPINA_INTERNATIONAL_HIGH_SCHOOL.png" style="width:60px; height:40px;" class="center" ></p>',-123.967715544999976,49.155335505000039).setMap(map);
+        createMarker('NANAIMO CAREER & TECHNICAL CTR <p><img src="Images/NANAIMO_CAREER_TECHNICAL_CTR.png" style="width:60px; height:40px;" class="center" ></p>',-123.961025545999973,49.162685506000059).setMap(map);
+        createMarker('NANAIMO DISTRICT SECONDARY <p><img src="Images/NANAIMO_DISTRICT_SECONDARY.png" style="width:60px; height:40px;" class="center" ></p>',-123.961025545999973,49.162685506000059).setMap(map);
+
+                
+        //Add pan to current location
+        infoWindow = new google.maps.InfoWindow();
+        const locationButton = document.createElement("button");
+        locationButton.textContent = "Pan to Current Location";
+        locationButton.classList.add("custom-map-control-button");
+        map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+        locationButton.addEventListener("click", () => {
+         
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+            (position) => {
+            const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+
+          infoWindow.setPosition(pos);
+          infoWindow.setContent("Location found."+"<br>Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
+          infoWindow.open(map);
+          map.setCenter(pos);
+            },
+            () => {
+          handleLocationError(true, infoWindow, map.getCenter());
+            },
+            );
+        } 
+        else {
+         // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+         }
+        });
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+         infoWindow.setPosition(pos);
+            infoWindow.setContent(
+            browserHasGeolocation
+            ? "Error: The Geolocation service failed."
+             : "Error: Your browser doesn't support geolocation.",
+            );
+        infoWindow.open(map);       
+	    }
+      
+    }
+
+    
+    //function to create markers for schools
+    function createMarker(school_name, point_x, point_y) {
+        // Notice that Google orders as Y,X (lat, long) rather than X,Y as ArcGIS does. 
+        // We need to compensate for this by reversing X and Y below.
+        const latlng = new google.maps.LatLng(point_y, point_x); // Coordinates of schools go in here
+        // Create marker without initialization (the hook map: map, is not defined)
+        const marker = new google.maps.Marker({position: latlng, title: school_name});
+        google.maps.event.addListener(marker, "click", 
+          function() {  
+            const infowindow = new google.maps.InfoWindow({content: school_name});
+            infowindow.open(marker.getMap(), marker);
+          } 
+		    );
+		    return marker; // Returning the marker from the function
+	    } 
+    
+       
+	  </script>
+  </body>
+</html>

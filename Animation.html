@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Samples of Animated Maps</title>
+    </head>
+    <body>
+        <h3>Video Animation of 3D landscape made using ArcGIS Pro</h3>
+        <video width="500" height="400" controls>
+            <source src="fly_sample.mp4" type="video/mp4">
+        </video>
+        
+        <hr>
+
+        <a href="JavaScriptAnimation.html" target="_self"><h3>View JavaScript Animation >></h3></a>
+        
+        <hr>
+
+        <h3>GIF Animation:</h3>
+        <img src="Images/myanimation.gif" width="500" height="400">
+        
+        <hr>
+        
+        <a href="JavaScriptSlideShow.html" target="_self"><h3>View JavaScript Automatic Slideshow >> </h3></a>
+        
+        <hr>
+
+        <h3>Get your location in coordinates.</h3>
+
+        <button onclick="getLocation()">Get my location</button>
+
+        <p id="demo"></p>
+
+        <script>
+            var x = document.getElementById("demo");
+
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                    } 
+                else { 
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                    } 
+            }
+
+            function showPosition(position) {
+                x.innerHTML = "Latitude: " + position.coords.latitude + 
+                "<br>Longitude: " + position.coords.longitude;
+            }
+        </script>
+        
+    </body>
+</html>

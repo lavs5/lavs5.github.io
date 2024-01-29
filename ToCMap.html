@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>My ToC</title>
+    </head>
+    <body>
+        <!--  
+        <a href="javascript:toggle('roads')" target="mapdisplay">Toggle Roads</a><br>
+        <a href="javascript:toggle('rivers')" target="mapdisplay">Toggle Rivers</a><br>
+        <a href="javascript:toggle('lakes')" target="mapdisplay">Toggle Lakes</a><br>
+        <a href="javascript:toggle('municipalities')" target="mapdisplay">Toggle Municipalities</a><br>
+        -->
+        <form name="toggles">
+            <INPUT type="checkbox" name="togglelakes" checked 
+            onclick="javascript:parent.mapdisplay.toggle('lakes')"> Lakes<p>
+            <INPUT type="checkbox" name="togglelakes" checked 
+            onclick="javascript:parent.mapdisplay.toggle('roads')"> Roads<p>
+            <INPUT type="checkbox" name="togglelakes" checked 
+            onclick="javascript:parent.mapdisplay.toggle('rivers')"> Rivers<p>
+            <INPUT type="checkbox" name="togglelakes" checked 
+            onclick="javascript:parent.mapdisplay.toggle('municipalities')"> Municipalities<p>
+        </form>
+            
+    </body>
+</html>

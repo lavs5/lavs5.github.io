@@ -1,0 +1,164 @@
+<html>
+  <!-- https://developers.arcgis.com/javascript/latest/display-a-map/ -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title> VIU Web Map Application </title>
+        
+        <style>
+            
+            #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+                        
+            }
+            
+            #srDiv{
+                height:60;
+                width: 40%;
+                margin-left: 25%;  
+                                
+                align-items: center;
+                text-align: center;
+                
+                display:flex;
+                                
+                border: navy solid 1px;
+                background-image: url("Images/banner.jpg");
+                background-position: center;
+                                                
+                color: rgb(15, 22, 90);
+                text-shadow: 1px 1px lightblue;
+                font-family:'Helvetica';        
+                
+            }
+
+        </style>
+
+        <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+        
+        <script src="https://js.arcgis.com/4.28/"></script>
+
+        <script>
+            require([
+            "esri/config",
+            "esri/Map",
+            "esri/views/MapView",
+            "esri/geometry/Extent",
+            "esri/layers/FeatureLayer",
+            "esri/widgets/ScaleBar",
+            "esri/widgets/Legend",
+            "esri/widgets/LayerList",
+            "esri/widgets/Home",
+            ], function (esriConfig, Map, MapView, Extent, FeatureLayer, ScaleBar, Legend, LayerList, Home) {
+
+            const map = new Map({
+                basemap: "streets-vector" // Vector basemap layer
+            });
+
+            const initialExtent= new Extent({
+                xmin: -13800000,
+                ymin: 6301000,
+                xmax: -13799900,
+                ymax: 6302350,
+                spatialReference: 102100
+
+            })
+            const view = new MapView({
+                map: map,
+                extent:initialExtent,
+                container: "viewDiv",
+            });
+            
+            //create feature layer from feature service
+            var ViuLayer0 = new FeatureLayer({
+                // Service URL of the layer with index 0
+                url: "https://catala.viu.ca/arcgis/rest/services/VIUMap_665686499/MapServer/0"
+
+            })
+            var ViuLayer1 = new FeatureLayer({
+                // Service URL of the layer with index 0
+                url: "https://catala.viu.ca/arcgis/rest/services/VIUMap_665686499/MapServer/1"
+
+            })
+            var ViuLayer2 = new FeatureLayer({
+                // Service URL of the layer with index 0
+                url: "https://catala.viu.ca/arcgis/rest/services/VIUMap_665686499/MapServer/2"
+
+            })
+            map.add(ViuLayer0);
+            map.add(ViuLayer1);
+            map.add(ViuLayer2);
+
+            //add scalebar
+            const scalebar = new ScaleBar({
+                view: view,
+                style: "ruler",
+            });
+            view.ui.add(scalebar, "bottom-left");
+
+            //adding legend
+            const legend = new Legend({
+                view: view,
+                style:"card",
+                
+                layerInfos:[
+                    {
+                        layer:ViuLayer0,
+                        title: "Schools"
+                    },
+                    {
+                        layer:ViuLayer1,
+                        title: "Roads"
+                    },
+                    {
+                        layer:ViuLayer2,
+                        title: "Buildings"
+                    }
+                    
+                ]
+                                
+            });
+            view.ui.add(legend, "top-right");
+
+            //display list of layers on map
+            view.when(() =>{
+                const layerList = new LayerList({
+                    view:view,
+                    
+                });
+            view.ui.add(layerList,"bottom-right");
+            });
+            
+            //adding home button, zoom back to initial extent
+            const home= new Home({
+                view:view,
+            });
+            view.ui.add(home,"top-left");
+
+            //adding title banner and text
+            view.ui.add("srDiv","manual",index=0);
+
+        });
+
+        </script>
+    </head>
+
+    <body>
+        <div id="viewDiv"></div>
+        
+        <div id="srDiv" class="esri-widget">
+            <img src="Images/VIU-75-Logo.jpg" alt="VIU logo" width="160" height="60"> 
+            <h3> THE VIU CAMPUS MAP WITH ARCGIS.COM AND ARCGIS SERVER</h3>
+        </div>
+        
+        
+        
+        
+
+    </body>
+
+</html>
