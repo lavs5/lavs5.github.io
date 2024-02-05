@@ -5,6 +5,7 @@ body {
     margin-bottom:2%;
     margin-left:1%;
     font-family: 'Calibri'; 
+    text-align: justify;
 }
 
 #banner{
@@ -24,15 +25,28 @@ body {
     
 }
 ul{
-    list-style-type:disc;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:rgb(15, 15, 78);
+    
 }
-a:link{
-    color:blue;
+li{
+    float: left;
+}
+li a{
+    display: block;
+    color:rgb(33, 194, 154);
+    text-align: center;
     text-decoration: none;
+    padding: 14px 16px;
 }
-a:visited{
-    color:brown
+li a:hover{
+    background-color: gray;
+    color: black;
 }
+
 a:hover{
     background-color:lightgreen;
 }
