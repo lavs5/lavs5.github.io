@@ -46,25 +46,24 @@
             
             function animate() 
             {
-                if (animation)
                 {document.images[0].src = eval("img" + i ).src;}
-			
 			    i++;
+                
 			    if (i == nbImg) i=0; 
 			    junk = setTimeout("animate();", 500); // in milliseconds
 		    }
 
         </SCRIPT>
+        
     </HEAD>
+
     <BODY onLoad="animate();">
 
-        <form>
-            <input type="button" onclick="animation=true;" value="Start">
-            <input type="button" onclick="animation=false;" value="Stop">
-        </form>
-    
-        <IMG src="" alt="Mean Temperature" width=500 height=450>
-    
+        <p style="text-align: justify;">This map uses Monthly Climate summaries published by Environment Canada for 2005. The measurement data points are interpolated over the entire country using Inverse Distance Weight (IDW) interpolation method creating a continuous raster for each month. Each month's raster is exported as JPEG files and animated using an infinite loop in JavaScript.</p>
+        
+        <div style="max-width:1000px; position:relative; margin: auto;">
+            <IMG src="" alt="Mean Temperature" width=750 height=675>
+        </div>
         
     </BODY>
 </HTML>
