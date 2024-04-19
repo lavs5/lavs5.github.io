@@ -18,10 +18,27 @@ body {
     background-image: url("Images/banner.png");
     background-position: center;
         
-    font-family:'Helvetica'; 
+    font-family:'Calibri'; 
     font-size: 20px;
     color: rgb(33, 194, 154);
     text-shadow: 1px 1px black;
+    
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#photo{
+    float: left;
+    margin-top: 10px;
+    margin-left: 5px;
+    
+}
+#intro{
+    font-size: 20px;
+    padding-left: 20px;
+    padding-top: 2%;
     
 }
 ul{
