@@ -6,6 +6,7 @@ body {
     margin-left:1%;
     font-family: 'Calibri'; 
     text-align: justify;
+    font-size: 20px;
 }
 
 #banner{
@@ -18,7 +19,7 @@ body {
     background-image: url("Images/banner.png");
     background-position: center;
         
-    font-family:'Calibri'; 
+    font-family:'Verdana'; 
     font-size: 20px;
     color: rgb(33, 194, 154);
     text-shadow: 1px 1px black;
