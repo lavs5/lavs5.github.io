@@ -1,12 +1,12 @@
 body { 
     background-color: #e2ede4;
-    margin-top:2%;
+    margin-top:1%;
     margin-right:1%;
-    margin-bottom:2%;
+    margin-bottom:1%;
     margin-left:1%;
     font-family: 'Calibri'; 
     text-align: justify;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #banner{
@@ -17,10 +17,9 @@ body {
     display: flex;
     
     background-image: url("Images/banner.png");
-    background-position: center;
         
-    font-family:'Verdana'; 
-    font-size: 20px;
+    font-family:'Calibri'; 
+    font-size: 15px;
     color: rgb(33, 194, 154);
     text-shadow: 1px 1px black;
     
@@ -32,14 +31,14 @@ body {
 }
 #photo{
     float: left;
-    margin-top: 10px;
-    margin-left: 5px;
+    margin-top: 1px;
+    margin-left: 1px;
     
 }
 #intro{
-    font-size: 20px;
-    padding-left: 20px;
-    padding-top: 2%;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-top: 1%;
     
 }
 ul{
@@ -61,7 +60,7 @@ li a{
     padding: 14px 16px;
 }
 li a:hover{
-    background-color: gray;
+    background-color: rgb(7, 215, 252);
     color: black;
 }
 
