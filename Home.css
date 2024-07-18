@@ -33,14 +33,10 @@ body {
     float: left;
     margin-top: 1px;
     margin-left: 1px;
+    margin-right: 1px;
     
 }
-#intro{
-    font-size: 15px;
-    padding-left: 5px;
-    padding-top: 1%;
-    
-}
+
 ul{
     list-style-type: none;
     margin: 0;
@@ -66,4 +62,12 @@ li a:hover{
 
 a:hover{
     background-color:lightgreen;
+}
+calcite-card {
+    
+    padding-left: 1%;
+    width: 100%;
+    --calcite-card-background-color:#e2ede4;
+    --calcite-card-border-color: none;
+    
 }

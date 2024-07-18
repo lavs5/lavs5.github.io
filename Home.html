@@ -4,22 +4,24 @@
 
     <head>
         <meta charset="UTF-8">
+        <script type="module" src=https://js.arcgis.com/calcite-components/2.10.1/calcite.esm.js></script>
+        <link rel="stylesheet" type="text/css" href=https://js.arcgis.com/calcite-components/2.10.1/calcite.css />
         <title>My Home</title>
         <!--Link to CSS file-->
         <link href="Home.css" rel="stylesheet" type="text/css">
 
         
     </head>
+
     <body>
-        <div class="container">
-            <div id="photo"><img src="Images/Photo_lavs.jpg" height="100" width="100"> 
-            </div>
-            <div id="intro">
-                <p>Hi, thank you for visiting. I am a student in the Geographic Information Systems Applications program at Vancouver Island University. Currently, I am learning all about Cartography, Spatial Analysis, Remote Sensing, Scripting, and many more fun topics. <br>Check out some of my recent work here.</p>
-                
-                <a href="mailto:lavgopal9@gmail.com">Contact me</a>
-                <a href="https://www.linkedin.com/in/lavanyagopal/" target="_blank">LinkedIn Profile</a>
-            </div>
+        <div id="photo"><img src="Images/Photo_lavs.jpg" height="150" width="150"> 
         </div>
+    
+        <calcite-card>
+            <span slot="heading"><p>Hi, I am a student in the Geographic Information Systems Applications program at Vancouver Island University. Currently, I am learning all about Cartography, Spatial Analysis, Remote Sensing, Scripting, and many more fun topics. Check out some of my recent work here.</p></span>
+            <calcite-button appearance="outline-fill"><a href="mailto:lavgopal9@gmail.com">Contact me</a></calcite-button>
+            <calcite-button appearance="outline-fill"><a href="https://www.linkedin.com/in/lavanyagopal/" target="_blank">LinkedIn Profile</a></calcite-button>
+        </calcite-card>
+        
     </body>
 </html>
