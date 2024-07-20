@@ -77,23 +77,37 @@
           <div class="row topspace">
               
               <!-- Article main content -->
-              <article class="col-sm-8 maincontent">
+              <article class="col-sm-7 maincontent pull-left">
                   <header class="page-header">
-                      <h2 class="custom-header">Gabriola Island NDVI Using GEE</h2>
+                      <h2 class="custom-header">NDVI Using GEE</h2>
                   </header>
                       <div class="your-class">
-                        <div><img src="Images/Imagery.png"></div>
-                        <div><img src="Images/GabriolaNDVI.png"></div>
-                        <div><img src="Images/DEM.png"></div>
-                        <div><img src="Images/ndvisenti.png"></div>
+                        <div><a href="Images/Imagery.png" target="_blank"><img src="Images/Imagery.png"></a></div>
+                        <div><a href="Images/GabriolaNDVI.png" target="_blank"></a><img src="Images/GabriolaNDVI.png"></a></div>
+                        <div><a href="Images/DEM.png" target="_blank"></a><img src="Images/DEM.png"></a></div>
+                        <div><a href="Images/ndvisenti.png" target="_blank"></a><img src="Images/ndvisenti.png"></a></div>
                       </div>
         
                   <br>
-                  <p>Gabriola Island is one of the Gulf Islands in the Strait of Georgia in British Columbia, Canada. It has a land area of about 57.6 square kilometres and a resident population of 4,500. <br>Remote Sensing techniques enable visualizing the geography of the island, terrain and vegetation health conditions. Google Earth Engine is a cloud-based geospatial analysis platform that enables users to visualize and analyze satellite images of our planet.<br> Here, I am have used latest base map imagery available for Gabriola Island, we see a portion of land in the northeast in brown color indicating lack of vegetation. Let's take a look at this portion of land using satellite imagery. Here, I am using Sentinel imagery from July 2020, creating a composite of available imagery, filtering out the clouds and visualizing the Normalized Difference Vegetation Index. On the map, darker blue represents healthy vegetation while lighter green represents no vegetation or the ocean. <br> I also looked at digital terrain model (DEM) and derived a hillshade, symbolized using Hard Light blend mode to visualize the terrain under a symbolized DEM.</p>
+                  
               </article>
 
               <!-- /Article -->
-              
+              <!-- Sidebar -->
+              <aside class="col-md-5 sidebar sidebar-left">
+                
+                  
+              <ul>
+                <li><b>Gabriola Island</b> is one of the Gulf Islands in the Strait of Georgia in British Columbia, Canada. It has a land area of about <b>57.6 sq km</b> and a resident population of <b>4,500</b>.</li>
+                <li>Remote Sensing techniques enable visualizing the geography of the island, terrain and vegetation health conditions. <b>Google Earth Engine</b> is a cloud-based geospatial analysis platform that enables users to visualize and analyze satellite images of our planet.</li>
+                <li>In the first image, as we explore the base map imagery available for Gabriola Island, we see a portion of land in the <b>northeast</b> in brown color indicating lack of forests/vegetation. Let's take a look at this portion of land using satellite imagery.</li>
+                <li>In the second image, I am using <b>Sentinel imagery from July 2020</b>, creating a composite of available imagery, filtering out the clouds and visualizing the Normalized Difference Vegetation Index. On the map, blue represents healthy vegetation while lighter green represents no vegetation or the ocean.</li>
+                <li>In the third image, I have extracted the <b>digital terrain model (DEM)</b> and derived a hillshade, symbolized using Hard Light blend mode to visualize the terrain under a symbolized DEM.</li>
+                <li>And finally, I have included the source code for the analysis on Google Earth Engine.</li>
+              </ul>
+
+            </aside>			
+            <!-- /Sidebar -->
           </div>
       </div>	
       <!-- /container -->
