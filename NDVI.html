@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+    
+    <title>Lavs- Gabriola NDVI</title>
+
+    <link rel="stylesheet" href="slick.css"/>
+	  <link rel="stylesheet" href="slick-theme.css"/>
+
+
+    <link rel="shortcut icon" href="Images/favicon-32x32.png">
+    
+    <!-- Bootstrap -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+    <!-- Icon font -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="Home.css">
+  </head>
+  
+  <body>
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+
+    <header id="header">
+      <div id="head" class="parallax" parallax-speed="2">
+          <h1 id="logo" class="text-center">
+              <img class="img-circle" src="Images/Photo_lavs.jpg">
+              <span class="title"><strong>Lavanya Gopal</strong></span>
+              <span class="tagline">
+                  <strong>GIS | Data Science | Remote Sensing | Engineering</strong>
+              
+                  <span class="widget-body">
+                      <a href="mailto:lavgopal9@gmail.com" style="color: #a7fdc8">
+                          <i class="fa fa-envelope-o fa-fw"></i></a>
+                          <a href="https://www.linkedin.com/in/lavanyagopal/" target="_blank" style="color: #a7fdc8">
+                          <i class="fa fa-linkedin fa-2"></i></a>       
+                  </span>	
+              </span>
+          </h1>
+      </div>
+  
+      <nav class="navbar navbar-default navbar-sticky">
+          <div class="container-fluid">
+  
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="true" > 
+                      <span class="sr-only">Toggle navigation</span> 
+                      <span class="icon-bar"></span> 
+                      <span class="icon-bar"></span> 
+                      <span class="icon-bar"></span> 
+                  </button>
+              </div>
+  
+              <div class="navbar-collapse collapse">
+  
+                  <ul class="nav navbar-nav">
+                      <li><a href="https://lavs5.github.io/" class="highlight">
+                          <strong>Home</strong></a></li>
+                      <li><a href="Resume.html" class="highlight">Resume</a></li>
+                      <li><a href="Blog.html" class="highlight">Blog</a></li>
+                  </ul>
+  
+              </div>
+          </div>
+      </nav>
+    </header>
+    <main id="main">
+
+      <div class="container">
+  
+          <div class="row topspace">
+              
+              <!-- Article main content -->
+              <article class="col-sm-8 maincontent">
+                  <header class="page-header">
+                      <h2 class="custom-header">Gabriola Island NDVI Using GEE</h2>
+                  </header>
+                      <div class="your-class">
+                        <div><img src="Images/Imagery.png"></div>
+                        <div><img src="Images/GabriolaNDVI.png"></div>
+                        <div><img src="Images/DEM.png"></div>
+                        <div><img src="Images/ndvisenti.png"></div>
+                      </div>
+        
+                  <br>
+                  <p>Gabriola Island is one of the Gulf Islands in the Strait of Georgia in British Columbia, Canada. It has a land area of about 57.6 square kilometres and a resident population of 4,500. <br>Remote Sensing techniques enable visualizing the geography of the island, terrain and vegetation health conditions. Google Earth Engine is a cloud-based geospatial analysis platform that enables users to visualize and analyze satellite images of our planet.<br> Here, I am have used latest base map imagery available for Gabriola Island, we see a portion of land in the northeast in brown color indicating lack of vegetation. Let's take a look at this portion of land using satellite imagery. Here, I am using Sentinel imagery from July 2020, creating a composite of available imagery, filtering out the clouds and visualizing the Normalized Difference Vegetation Index. On the map, darker blue represents healthy vegetation while lighter green represents no vegetation or the ocean. <br> I also looked at digital terrain model (DEM) and derived a hillshade, symbolized using Hard Light blend mode to visualize the terrain under a symbolized DEM.</p>
+              </article>
+
+              <!-- /Article -->
+              
+          </div>
+      </div>	
+      <!-- /container -->
+          
+    </main>
+
+   <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="template.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('.your-class').slick({
+            arrows: true,
+            dots: true,
+            adaptiveHeight: true,
+            fade: true
+          });
+        });
+    </script>    
+    
+  </body>
+</html>
