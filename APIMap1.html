@@ -86,7 +86,12 @@
             <header class="page-header">
                 <h2 class="custom-header">Nanaimo Schools using Google Maps API</h2>
             </header>
-            <div id="map"></div>
+            
+            <div class="your-class">
+              <div id="map"></div>
+              
+            </div>
+            
           </article>
       <!--<h3>My Google Maps Demo</h3>-->
       
@@ -219,6 +224,26 @@
       </script>
       </div>
       </div>
+      
     </main>
+      <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+      <script src="template.js"></script>
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script type="text/javascript" src="slick.js"></script>
+
+      <script type="text/javascript">
+        $(document).ready(function(){
+            $('.your-class').slick({
+              arrows: true,
+              dots: true,
+              adaptiveHeight: true,
+              fade: true
+            });
+          });
+      </script>
   </body>
 </html>
