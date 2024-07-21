@@ -77,7 +77,7 @@
           <div class="row topspace">
               
               <!-- Article main content -->
-              <article class="col-sm-7 maincontent pull-left">
+              <article class="col-sm-11 maincontent">
                   <header class="page-header">
                       <h2 class="custom-header">NDVI Using GEE</h2>
                   </header>
@@ -89,25 +89,18 @@
                       </div>
         
                   <br>
-                  
+                  <ul>
+                    <li><b>Gabriola Island</b> is one of the Gulf Islands in the Strait of Georgia in British Columbia, Canada. It has a land area of about <b>57.6 sq km</b> and a resident population of <b>4,500</b>.</li>
+                    <li>Remote Sensing techniques enable visualizing the geography of the island, terrain and vegetation health conditions. <b>Google Earth Engine</b> is a cloud-based geospatial analysis platform that enables users to visualize and analyze satellite images of our planet.</li>
+                    <li>In the first image, as we explore the base map imagery available for Gabriola Island, we see a portion of land in the <b>northeast</b> in brown color indicating lack of forests/vegetation. Let's take a look at this portion of land using satellite imagery.</li>
+                    <li>In the second image, I am using <b>Sentinel imagery from July 2020</b>, creating a composite of available imagery, filtering out the clouds and visualizing the Normalized Difference Vegetation Index. On the map, blue represents healthy vegetation while lighter green represents no vegetation or the ocean.</li>
+                    <li>In the third image, I have extracted the <b>digital terrain model (DEM)</b> and derived a hillshade, symbolized using Hard Light blend mode to visualize the terrain under a symbolized DEM.</li>
+                    <li>And finally, I have included the source code for the analysis on Google Earth Engine.</li>
+                  </ul>
               </article>
 
               <!-- /Article -->
-              <!-- Sidebar -->
-              <aside class="col-md-5 sidebar sidebar-left">
-                
-                  
-              <ul>
-                <li><b>Gabriola Island</b> is one of the Gulf Islands in the Strait of Georgia in British Columbia, Canada. It has a land area of about <b>57.6 sq km</b> and a resident population of <b>4,500</b>.</li>
-                <li>Remote Sensing techniques enable visualizing the geography of the island, terrain and vegetation health conditions. <b>Google Earth Engine</b> is a cloud-based geospatial analysis platform that enables users to visualize and analyze satellite images of our planet.</li>
-                <li>In the first image, as we explore the base map imagery available for Gabriola Island, we see a portion of land in the <b>northeast</b> in brown color indicating lack of forests/vegetation. Let's take a look at this portion of land using satellite imagery.</li>
-                <li>In the second image, I am using <b>Sentinel imagery from July 2020</b>, creating a composite of available imagery, filtering out the clouds and visualizing the Normalized Difference Vegetation Index. On the map, blue represents healthy vegetation while lighter green represents no vegetation or the ocean.</li>
-                <li>In the third image, I have extracted the <b>digital terrain model (DEM)</b> and derived a hillshade, symbolized using Hard Light blend mode to visualize the terrain under a symbolized DEM.</li>
-                <li>And finally, I have included the source code for the analysis on Google Earth Engine.</li>
-              </ul>
-
-            </aside>			
-            <!-- /Sidebar -->
+             
           </div>
       </div>	
       <!-- /container -->
