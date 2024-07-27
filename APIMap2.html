@@ -90,16 +90,16 @@
 				<article class="col-sm-11 maincontent">
 					<header class="page-header">
 						<!--Add title to page and center using inline CSS-->
-						<h2 class="custom-header">The Nanaimo Municipalities&apos; Map with Leaflet JavaScript API</h2>
+						<h2 class="custom-header">Nanaimo Municipalities&apos; using Leaflet API</h2>
 					</header>
 					
 					<div id='map'></div>
 					
 					<br>
 					<ul>
-						<li> This map uses <b>ArcGIS Pro, QGIS, OpenLayers and Leaflet JavaScript API</b> to create a custom webmap of municipalities in Nanaimo with pop-ups showing information such as municipality's website, population, number of dwellings, and area. Additionally, the map has a list of base map options to choose from, created using tile layers from <b>Open Street Maps.</b></li>
-						<li>First, I load a municipalities layer into <b>ArcGIS Pro</b>, change the projection to geographic coordinate system, and export as a shapefile. Next, I import this layer into <b>QGIS</b> and create a simple web map using the <a href="https://www.qgistutorials.com/en/docs/web_mapping_with_qgis2web.html" target="_blank">Create web map QGIS plugin.</a></li> 
-						<li><a href="http://leafletjs.com/examples/geojson/example.html" target="_blank"> Using geoJSON with Leaflet</a> tutorial from the <b>Leaflet</b> website is quite helpful in understanding how to use geoJSON files to create an interactive web map. Using this tutorial as a reference, I write functions to style the municipalities layer, add a list of base maps, and add a scale bar. Finally, I write a snippet of code to set up the pop-ups using the attributes recorded in the <b> geoJSON</b> file. When I create the municipalities layer on the map, the geoJSON features are called along with their styles and attributes for pop-ups.</li>
+						<li> This map uses <b>ArcGIS Pro, QGIS, OpenLayers and Leaflet JavaScript API</b> to develop a custom web map of Nanaimo’s municipalities. The map features pop-ups that display essential information, including each municipality's website, population, number of dwellings, and area. It also offers various base map options, using tile layers sourced from <b>Open Street Map.</b></li>
+						<li>The process begins with loading a municipalities layer into ArcGIS Pro, reprojecting it to a geographic coordinate system, and exporting it as a shapefile. This shapefile is then imported into QGIS, where a basic web map is created using the <a href="https://www.qgistutorials.com/en/docs/web_mapping_with_qgis2web.html" target="_blank">Create web map QGIS plugin.</a></li> 
+						<li>With <a href="http://leafletjs.com/examples/geojson/example.html" target="_blank"> Using geoJSON with Leaflet</a> tutorial from the Leaflet website as a reference, I write functions to style the municipalities layer, provide base map options, add a scale bar, and configure pop-ups using the attributes from the <b> geoJSON</b> file.</li>
 						
 						
 					</ul>
@@ -109,9 +109,25 @@
 				<script src="APIMap2J.js" type="text/javascript"></script>
 
 				<script>
-				
+				var highlightLayer;
+       			function highlightFeature(e) {
+            		highlightLayer = e.target;
+
+            		if (e.target.feature.geometry.type === 'LineString') {
+              			highlightLayer.setStyle({
+                		color: '#ffffcc',
+              		});
+            		} else {
+              			highlightLayer.setStyle({
+                		fillColor: '#ffffcc',
+                		fillOpacity: 1
+              		});
+            		}
+            		
+        		}
+
 				//set map to coordinates, zoom value
-				const map = L.map('map').setView([49.139, -124.146], 9);
+				const map = L.map('map').setView([49.1, -123.99], 9);
 				
 				//define basemap tiles, add openstreet map as default
 				var OpenStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -142,9 +158,18 @@
 
 				// function to create popups, additional variable Province
 				function pop_Municipalities(feature, layer) {
+					layer.on({
+                		mouseout: function(e) {
+							for (i in e.target._eventParents) {
+								e.target._eventParents[i].resetStyle(e.target);
+							}
+                		},
+                		mouseover: highlightFeature,
+            		});
+					
 					var popupContent = "<b>" + "Municipality name: " + feature.properties['NAME'] + "</b>"+"</br>"+
 					"Province: "+ feature.properties['PROV'] + "</br>" + 
-					"Web URL: " + "<a href='" + feature.properties['HTTP_URL'] + "'target=_blank> Website </a>" + "</br>" + 
+					"Website: " + "<a href='" + feature.properties['HTTP_URL'] + "'target=_blank>" + feature.properties['HTTP_URL'] + "</a>" + "</br>" + 
 					"Population: " + feature.properties['POP96'] + "</br>" + 
 					"Number of Dwellings : " + feature.properties['DWELL96'] + "</br>" + 
 					"Area sq.km.: " + feature.properties['POP_SQKM'];
@@ -153,20 +178,276 @@
 				}
 				
 				// function to style municipalities pane
-				function style_municipalitiesG_0_0() {
-						return {
-							pane: 'pane_municipalitiesG_0',
-							opacity: 1,
-							color: 'rgba(0,0,0,1.0)',
-							dashArray: '',
-							lineCap: 'butt',
-							lineJoin: 'miter',
-							weight: 1, 
-							fill: true,
-							fillOpacity: 0,
-							fillColor: 'rgba(136,104,231,0.45)',
-						}
-				}
+				function style_municipalitiesG_0_0(feature) {
+            switch(String(feature.properties['NAME'])) {
+                case 'CHEMAINUS 13':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(71,203,124,0.4)',
+            }
+                    break;
+                case 'COWICHAN VALLEY, SUBD. A':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(193,219,18,0.4)',
+            }
+                    break;
+                case 'COWICHAN VALLEY, SUBD. B':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(65,200,76,0.4)',
+            }
+                    break;
+                case 'COWICHAN VALLEY, SUBD. D':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(232,91,110,0.4)',
+            }
+                    break;
+                case 'LADYSMITH':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(137,172,240,0.4)',
+            }
+                    break;
+                case 'NANAIMO':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(228,122,204,0.4)',
+            }
+                    break;
+                case 'NANAIMO RIVER 2':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(104,239,63,0.4)',
+            }
+                    break;
+                case 'NANAIMO RIVER 3':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(223,170,117,0.4)',
+            }
+                    break;
+                case 'NANAIMO RIVER 4':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(213,108,155,0.4)',
+            }
+                    break;
+                case 'NANAIMO TOWN 1':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(146,227,47,0.4)',
+            }
+                    break;
+                case 'NANAIMO, SUBD. A':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(94,49,209,0.4)',
+            }
+                    break;
+                case 'NANAIMO, SUBD. B':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(210,175,34,0.4)',
+            }
+                    break;
+                case 'NANOOSE':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(47,173,240,0.4)',
+            }
+                    break;
+                case 'NORTH COWICHAN':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(89,204,172,0.4)',
+            }
+                    break;
+                case 'OYSTER BAY 12':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(99,206,209,0.4)',
+            }
+                    break;
+                case 'PARKSVILLE':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(208,119,216,0.4)',
+            }
+                    break;
+                case 'QUALICUM BEACH':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(159,73,216,0.4)',
+            }
+                    break;
+                case 'SQUAW-HAY-ONE 11':
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(125,128,208,0.4)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_municipalitiesG_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(211,76,46,0.4)',
+            }
+                    break;
+            }
+        }
 
 				//Create pane, DOM element to control layer order on map
 				map.createPane('pane_municipalitiesG_0');
