@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    
+    <title>Lavanya- BC Temperature</title>
+
+    <link rel="stylesheet" href="slick.css"/>
+	  <link rel="stylesheet" href="slick-theme.css"/>
+
+
+    <link rel="shortcut icon" href="Images/favicon-32x32.png">
+    
+    <!-- Bootstrap -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+    <!-- Icon font -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="Home.css">
+  </head>
+  
+  <body>
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+
+    <header id="header">
+      <div id="head" class="parallax" parallax-speed="2">
+          <h1 id="logo" class="text-center">
+            <a href="https://lavs5.github.io/" target="_self"><img class="img-circle" src="Images/Photo_lavs.jpg"></a>
+            <span class="title"><strong>Lavanya Gopal</strong></span>
+              <span class="tagline">
+                  <strong>GIS | Data Science | Remote Sensing | Engineering</strong>
+              
+                  <span class="widget-body">
+                      <a href="mailto:lavgopal9@gmail.com" style="color: #a7fdc8">
+                          <i class="fa fa-envelope-o fa-fw"></i></a>
+                          <a href="https://www.linkedin.com/in/lavanyagopal/" target="_blank" style="color: #a7fdc8">
+                          <i class="fa fa-linkedin fa-2"></i></a>       
+                  </span>	
+              </span>
+          </h1>
+      </div>
+  
+      <nav class="navbar navbar-default navbar-sticky">
+          <div class="container-fluid">
+  
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="true" > 
+                      <span class="sr-only">Toggle navigation</span> 
+                      <span class="icon-bar"></span> 
+                      <span class="icon-bar"></span> 
+                      <span class="icon-bar"></span> 
+                  </button>
+              </div>
+  
+              <div class="navbar-collapse collapse">
+  
+                  <ul class="nav navbar-nav">
+                      <li><a href="https://lavs5.github.io/" class="highlight">
+                          <strong>Home</strong></a></li>
+                      <li><a href="Resume.html" class="highlight">Resume</a></li>
+                      <li><a href="Blog.html" class="highlight">Blog</a></li>
+                  </ul>
+  
+              </div>
+          </div>
+      </nav>
+    </header>
+    <main id="main">
+
+      <div class="container">
+  
+          <div class="row topspace">
+              
+              <!-- Article main content -->
+              <article class="col-sm-11 maincontent">
+                  <header class="page-header">
+                      <h2 class="custom-header">BC Temperature 2023</h2>
+                  </header>
+                      <div class="your-class">
+                        <div><a href="Images/BCTempPoster.png" target="_blank"></a><img src="Images/BCTempPoster.png"></a></div>
+                        <div><a href="Images/BC_MonthlyTemp_2023.gif" target="_blank"><img src="Images/BC_MonthlyTemp_2023.gif"></a></div>
+                        
+                      </div>
+                    
+                      <br>
+                <ul class="list-group">
+                <li class>Environment and Climate Change Canada (ECCC) publishes comprehensive climate data including temperature and precipitation, for various locations across Canada. Understanding the <b>increase in temperature</b> is crucial in comprehending the complexities of climate change and its impacts on weather patterns.</li>
+
+                <li>To conduct this analysis, CSV files with monthly climate summary for the year 2023 and the province of British Columbia were acquired from the <a href="https://climate.weather.gc.ca/" target="_blank">ECCC</a> website. The maps were created using <b>geostatistical wizard</b> and geoprocessing tools on ArcGIS Pro.</li>
+
+                <li>The mean temperature data from each climate station were interpolated using the inverse distance weight interpolation method to generate smooth continuous surfaces represented as raster layers for each month. The exploratory interpolation tool was used to determine the interpolation method with the lowest prediction error.</li>
+
+                <li> To ensure consistency, a symbolization range of <b>-17C to 24C</b> was maintained to facilitate the comparison of average temperatures between each month using the same metric. Point clustering symbolization was used to visualize the climate station locations along with a count of climate stations clustered in specific locations and a chart illustrating the average monthly temperatures for 2023 in BC was included to provide a general overview of temperature variability.</li>
+              </ul>
+              </article>
+              
+              <!-- /Article -->
+             
+          </div>
+      </div>	
+      <!-- /container -->
+          
+    </main>
+
+   <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="template.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('.your-class').slick({
+            arrows: true,
+            dots: true,
+            adaptiveHeight: true,
+            fade: true
+          });
+        });
+    </script>    
+    
+  </body>
+</html>
