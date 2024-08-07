@@ -82,7 +82,7 @@
           <div class="row topspace">
               
               <!-- Article main content -->
-            <article class="col-sm-pull-10 maincontent">
+            <article class="col-sm-12">
                 <header class="page-header">
                     <h2 class="custom-header">Chilcotin River Landslide Using Google Earth Engine</h2>
                 </header>
@@ -95,33 +95,33 @@
                 </ul>
             </article>
             
-             
+            <div>
+              <!-- Images to compare -->
+              <div class="custom-image-slider" id="customImageSlider">
+                  <img class="slider-before" src="Images/PreNDWI.png" alt="Before Image">
+                  <img class="slider-after" src="Images/PostNDWI.png" alt="After Image">
+                  <div class="slider-handle"></div>
+              </div>  
+              
+              <br>
+            <ul>
+              <li>Normalized Difference Vegetation Index (NDVI) uses near infrared and the red band to identify areas of increased water flow along the river. Check out the pre NDVI, post NDVI, and GEE source code below.</li>
+            </ul>
+          </div>         
+          
+          
+          <div>
+            <div class="your-class">
+              <div><img src="Images/PreNDVI.png"></div>
+              <div><img src="Images/PostNDVI.png"></div>
+              <div><img src="Images/ChilcotinCode.png"></div>
+            </div>
+          </div>
           </div>
         </div>
 
         <!-- Container for the slider -->
-        <div class="col-sm-pull-10 maincontent">
-            <!-- Images to compare -->
-            <div class="custom-image-slider" id="customImageSlider">
-                <img class="slider-before" src="Images/PreNDWI.png" alt="Before Image">
-                <img class="slider-after" src="Images/PostNDWI.png" alt="After Image">
-                <div class="slider-handle"></div>
-            </div>  
-            
-            <br>
-          <ul>
-            <li>Normalized Difference Vegetation Index (NDVI) uses near infrared and the red band to identify areas of increased water flow along the river. Check out the pre NDVI, post NDVI, and GEE source code below.</li>
-          </ul>
-        </div>         
         
-        
-        <div class="col-sm-10 maincontent">
-          <div class="your-class">
-            <div><img src="Images/PreNDVI.png"></div>
-            <div><img src="Images/PostNDVI.png"></div>
-            <div><img src="Images/ChilcotinCode.png"></div>
-          </div>
-        </div>
 
         <script>
             document.addEventListener("DOMContentLoaded", function () {

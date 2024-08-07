@@ -522,21 +522,31 @@ body {
   .leftcolumn{
     float: left;
     width: 70%;
+    padding: 1%;
   }
   .rightcolumn{
     float: left;
     width: 30%;
-    padding-left: 20px;
+    padding: 1%;
   }
-  .blog-thumbnail{
+  .blog-thumbnail {
     float: left;
-    padding: 20px;
     width: 25%;
+    overflow: hidden;
+    height: 25%;
+    padding: 1%;
+    position: relative;
+    display: block;
+    
   }
   .blog-card{
-    background-color: rgb(221, 241, 221);
+    background-color:#dbf7e6;
     padding: 20px;
     margin-top: 20px;
+    position: relative;
+    display: block;
+    
+    
   }
  /* Clear floats after the columns */
   .blog-row:after {
