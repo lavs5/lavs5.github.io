@@ -231,14 +231,14 @@ body {
     padding: 1px 0;
   }
   #head img.img-circle {
-    width: 120px;
-    height: 120px;
+    width: 135px;
+    height: 143px;
     overflow: hidden;
-    border: 9px solid rgba(2, 117, 27, 0.05);
+    border: 9px solid rgba(2, 246, 84, 0.05);
     
   }
   #head .title {
-    font-family: Georgia;  
+    font-family: Cambria;  
     font-size: 2.5rem;
     color: #a7fdc8;
   }
