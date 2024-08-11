@@ -92,7 +92,9 @@
                     <h2 class="custom-header">Nanaimo Municipalities&apos; using Leaflet API</h2><br>
                 </header>
 				    <article class="col-sm-8">
-					    <div id='map'></div>					
+                        <div class="your-class">
+					        <div id='map'></div>
+                        </div>					
 					</article>
                     <aside class="col-sm-4 sidebar sidebar-right">
                         
@@ -480,7 +482,16 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="slick.js"></script>
 
-	
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $('.your-class').slick({
+              arrows: true,
+              dots: true,
+              adaptiveHeight: true,
+              fade: true
+            });
+          });
+      </script>
 
 
 </body>
