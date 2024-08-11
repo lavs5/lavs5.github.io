@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    
+    <title>Lavanya- Beavers</title>
+
+    <link rel="stylesheet" href="slick.css"/>
+	  <link rel="stylesheet" href="slick-theme.css"/>
+
+
+    <link rel="shortcut icon" href="Images/favicon-32x32.png">
+    
+    <!-- Bootstrap -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+    <!-- Icon font -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="Home.css">
+  </head>
+  
+  <body>
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+
+    <header id="header">
+      <div id="head" class="parallax" parallax-speed="2">
+          <h1 id="logo" class="text-center">
+            <a href="https://lavs5.github.io/" target="_self"><img class="img-circle" src="Images/Photo_lavs.jpg"></a>
+            <span class="title"><strong>Lavanya Gopal</strong></span>
+              <span class="tagline">
+                  <strong>GIS | Data Science | Remote Sensing | Engineering</strong>
+              
+                  <span class="widget-body">
+                      <a href="mailto:lavgopal9@gmail.com" style="color: #a7fdc8">
+                          <i class="fa fa-envelope-o fa-fw"></i></a>
+                          <a href="https://www.linkedin.com/in/lavanyagopal/" target="_blank" style="color: #a7fdc8">
+                          <i class="fa fa-linkedin fa-2"></i></a>       
+                  </span>	
+              </span>
+          </h1>
+      </div>
+  
+      <nav class="navbar navbar-default navbar-sticky">
+          <div class="container-fluid">
+  
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="true" > 
+                      <span class="sr-only">Toggle navigation</span> 
+                      <span class="icon-bar"></span> 
+                      <span class="icon-bar"></span> 
+                      <span class="icon-bar"></span> 
+                  </button>
+              </div>
+  
+              <div class="navbar-collapse collapse">
+  
+                  <ul class="nav navbar-nav">
+                      <li><a href="https://lavs5.github.io/" class="highlight">
+                          <strong>Home</strong></a></li>
+                      <li><a href="Resume.html" class="highlight">Resume</a></li>
+                      <li><a href="Blog.html" class="highlight">Blog</a></li>
+                  </ul>
+  
+              </div>
+          </div>
+      </nav>
+    </header>
+    <main id="main">
+
+      <div class="container">
+  
+          <div class="row topspace">
+              
+              <!-- Article main content -->
+              <article class="col-sm-12 maincontent">
+                  <header class="page-header">
+                      <h2 class="custom-header">Beavers and Wildfires</h2>
+                  </header>
+                      <div class="your-class">
+                        <div><a href="Images/Beavers.png" target="_blank"><img src="Images/Beavers.png"></a></div>
+                      </div>
+        
+                  <br>
+                  <ul class="list-group">
+                    <li>Beavers, nature's engineers and climate heroes, are a <b>keystone species</b> in the temperate and boreal forest aquatic ecosystems. In British Columbia, the beaver is found throughout the province in lakes, along rivers and streams, and even in the brackish, tidal waters along the coast, where it can be observed in sloughs and along the shoreline.</li> 
+                    <li>Beavers feed entirely on plants, including tree bark and other vegetation on land and in the water to provide a <b>fireproof habitat</b> for plants and a number of aquatic, semi-aquatic, and terrestrial animals to live and thrive in, including endangered species. Because beavers help control the flow of water, they can support the restoration of waterways which is needed to respond to climate change and mitigate extreme weather events, such as wildfires and flooding.</li>
+                    <li>By felling trees, beavers open up opportunities for a <b>diverse ecosystem</b> of plants and animals. Fallen trees provide deadwood habitat and allows sunlight to reach the understory vegetation, providing rich habitat for insects, birds, bats and amphibians. The beaver population has delivered significant ecological benefits including new wetland habitat and increases in fish population.</li>
+                    <li>This map compares beaver observation locations and wildfire occurrences during 2022-2023 and is based on the research analogy shared by <a href ="https://emilyfairfaxscience.com/research/firebeavers/" target="_blank">Dr. Emily Fairfax</a>: 'the beaver wetlands are too wet to burn, <b>Beavers= Firefighters</b>'. </li>
+                  </ul>
+              </article>
+
+              <!-- /Article -->
+             
+          </div>
+      </div>	
+      <!-- /container -->
+          
+    </main>
+
+   <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="template.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('.your-class').slick({
+            arrows: true,
+            dots: true,
+            adaptiveHeight: true,
+            fade: true
+          });
+        });
+    </script>    
+    
+  </body>
+</html>

@@ -96,7 +96,7 @@
 					<div id='map'></div>
 					
 					<br>
-					<ul>
+					<ul class="list-group">
 						<li> This map uses <b>ArcGIS Pro, QGIS, OpenLayers and Leaflet JavaScript API</b> to develop a custom web map of Nanaimo’s municipalities. The map features pop-ups that display essential information, including each municipality's website, population, number of dwellings, and area. It also offers various base map options, using tile layers sourced from <b>Open Street Map.</b></li>
 						<li>The process begins with loading a municipalities layer into ArcGIS Pro, reprojecting it to a geographic coordinate system, and exporting it as a shapefile. This shapefile is then imported into QGIS, where a basic web map is created using the <a href="https://www.qgistutorials.com/en/docs/web_mapping_with_qgis2web.html" target="_blank">Create web map QGIS plugin.</a></li> 
 						<li>With <a href="http://leafletjs.com/examples/geojson/example.html" target="_blank"> Using geoJSON with Leaflet</a> tutorial from the Leaflet website as a reference, I write functions to style the municipalities layer, provide base map options, add a scale bar, and configure pop-ups using the attributes from the <b> geoJSON</b> file.</li>
