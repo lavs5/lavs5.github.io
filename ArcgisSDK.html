@@ -24,8 +24,8 @@
         <style>
             
             #viewDiv {
-                width: 800px;
-                height: 600px;
+                width: 100%;
+                height: 500px;
                 margin-left: auto;
                 margin-right: auto;             
             }
@@ -176,24 +176,21 @@
         <main id="main">
             <div class="container">
                 <div class="row topspace">
-              
-                    <!-- Article main content -->
-                    <article class="col-sm-12 maincontent">
                         <header class="page-header">
-                            <h2 class="custom-header">Nanaimo Schools using ArcGIS Maps SDK JavaScript</h2>
+                            <h2 class="custom-header">Nanaimo Schools using ArcGIS Maps SDK JavaScript</h2><br>
                         </header>
-
+                    <!-- Article main content -->
+                    <article class="col-sm-8">
                         <div id="viewDiv"></div>
-                    
-                        <br>
-                     
+                    </article>
+                    <!-- /Article -->
+                    <aside class="col-sm-4 sidebar sidebar-right">
                         <ul class="list-group">
                             <li>This map uses ArcGIS Maps SDK for Javascript, previously known as ArcGIS API for JavaScript to build a simple webmap. Extensive documentation and tutorials available on <a href="https://developers.arcgis.com/javascript/latest/tutorials/display-a-map/" target="_blank">Esri Developer</a> website were used to code this webmap.</li>
                             <li>The ArcGIS Maps SDK for JavaScript is available as Asynchronous Module Definition (AMD) modules and the <b>require</b> function uses references to determine which modules will be loaded and passed as parameters to the callback function where they can be used in the application. This map uses Map, MapView, Symbol, PictureMarkerSymbol, infoTemplate, Graphic, Point, and Locate modules/classes.</li>
                             <li>This web mapping application displays the <b>location and popup</b> information for some of the schools in Nanaimo. A short snippet of code defines a function to create multiple picture marker symbols on the map. A <b>locate widget</b> on the top left of the map uses the Locate class to zoom to current location.</li>
-                      </ul>
-                    </article>
-                    <!-- /Article -->
+                         </ul>
+                    </aside>
                 </div>
             </div>
            

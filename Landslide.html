@@ -80,46 +80,47 @@
 
         <div class="container">  
           <div class="row topspace">
-              
-              <!-- Article main content -->
-            <article class="col-sm-12">
-                <header class="page-header">
-                    <h2 class="custom-header">Chilcotin River Landslide Using Google Earth Engine</h2>
+              <header class="page-header">
+                    <h2 class="custom-header">Chilcotin River Landslide Using Google Earth Engine</h2><br>
                 </header>
-                <br>
+              <!-- Article main content -->
+            <article class="col-sm-6">
                 <ul class="list-group">
-                    <li> The Chilcotin River located in Southern British Columbia is a 241km long tributary of the Fraser River. A landslide occured in the last week of July 2024 at Farwell Canyon located about 22km south of Williams Lake. This landslide dammed the Chilcotin river and created a lake about 11km behind the slide.
+                    <li> The Chilcotin River located in Southern British Columbia is a 241km long tributary of the Fraser River. A <a href="https://news.gov.bc.ca/releases/2024EMCR0035-001244" target="_blank">landslide</a> occured in the last week of July 2024 at Farwell Canyon located about 22km south of Williams Lake. This landslide dammed the Chilcotin river and created a lake about 11km behind the slide. 
                     </li>
-                    <li>The images below show a comparison of pre vs. post terrain conditions. These images were prepared using Sentinel imagery available from Google Earth Engine collections. The Near Infrared and the Green band were used to calculate a Normalized Difference Water Index.</li>
-                    <li>NDWI is helpful in visualizing and identifying water pixels as well as soil (landslide) pixels. This is because water has the least reflectance and soil has higher redlectance in the near infrared band. The satellite imagery used for this comparison includes available imagery from the following time periods: Pre- July 1st to 25th, 2024; Post- August 1st to August 4th, 2024</li>
+                    <li>The images below show a comparison of <b>pre vs. post</b> terrain conditions. These images were prepared using Sentinel imagery available from Google Earth Engine collections. The Near Infrared and the Green band were used to calculate a Normalized Difference Water Index (NDWI).</li>
+                    <li><b>NDWI</b> is helpful in visualizing and identifying water pixels as well as soil (landslide) pixels. This is because water has the least reflectance and soil has higher redlectance in the near infrared band. The satellite imagery used for this comparison includes available imagery from the following time periods: <i>Pre- July 1st to 25th, 2024; Post- August 1st to August 4th, 2024</i></li>
+                    <li>Note, the pixels in bright yellow to the north of the dammed river in the post image are crop circles, these are unrelated to the landslide.</li>
                 </ul>
             </article>
             
-            <div>
+            <div class="col-sm-6"> 
               <!-- Images to compare -->
               <div class="custom-image-slider" id="customImageSlider">
                   <img class="slider-before" src="Images/PreNDWI.png" alt="Before Image">
                   <img class="slider-after" src="Images/PostNDWI.png" alt="After Image">
                   <div class="slider-handle"></div>
-              </div>  
-              
+              </div>
               <br>
-            <ul>
-              <li>Normalized Difference Vegetation Index (NDVI) uses near infrared and the red band to identify areas of increased water flow along the river. Check out the spectral reflectance of soil, vegetation, and water in the near infrared band, as well as pre NDVI, post NDVI, and GEE source code below.</li>
-            </ul>
-          </div>         
-          
-          
-          <div>
-            <div class="your-class">
-              <div><img src="Images/SpectralReflectanceCurves.png"></div>
-              <div><img src="Images/PreNDVI.png"></div>
-              <div><img src="Images/PostNDVI.png"></div>
-              <div><img src="Images/ChilcotinCode.png"></div>
+            </div>         
+          </div><br>
+          <div class="row">
+              <div class="col-sm-6">
+                <ul class="list-group">
+                  <li>Normalized Difference Vegetation Index (NDVI) uses near infrared and the red band to identify areas of increased water flow along the river. The <b>spectral reflectance</b> curve shows how soil and vegetation have a higher reflectance than water in the near infrared band. We use this concept to identify change and calculate Normalized Difference Vegetation Index for the pre and post periods of time. <b>NDVI= NIR-R/NIR+R.</b> </li>
+                  <li>The values range from -1 to 1 where the pixels closer to -1 (white) represent low reflectance such as water and pixels closer to +1 represent higher reflectance such as soil/vegetation. The circled area shows displacement in soil and in the area to the left of this displacement, we see the river water being blocked. </li>
+                  <li>Check out the GEE source code used to create these maps.</li>
+                </ul>
+              </div>
+              <div class="your-class col-sm-6">
+                <div><a href="Images/SpectralReflectanceCurves.png" target="_blank"><img src="Images/SpectralReflectanceCurves.png"></a></div>
+                <div><a href="Images/PreNDVI.png" target="_blank"><img src="Images/PreNDVI.png"></a></div>
+                <div><a href="Images/PostNDVI.png" target="_blank"><img src="Images/PostNDVI.png"></a></div>
+                <div><a href="Images/ChilcotinCode.png" target="_blank"><img src="Images/ChilcotinCode.png"></a></div>
+              </div>
+
             </div>
           </div>
-          </div>
-        </div>
 
         <!-- Script for image slider -->
         
@@ -227,7 +228,8 @@
             arrows: true,
             dots: true,
             adaptiveHeight: true,
-            fade: true
+            fade: true,
+            autoplay: true
           });
         });
     </script>  
