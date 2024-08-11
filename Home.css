@@ -774,14 +774,10 @@ body {
   right: -24px;
   border-left: 16px solid #000000;
 }
-
-  
   /* Max page width
   /////////////////////////////////////////////////////////////////////*/
-  @media screen and (min-width: 1200px) {
+  @media (min-width: 1200px) {
     .container {
       max-width: 1080px;
     }
-  } 
-
-
+  }
