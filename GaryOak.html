@@ -110,12 +110,11 @@
               <ul class="list-group">
                 <li>Maps showing <b>Garry Oak/ Oregon White Oak</b> tree species distribution in the City of Victoria</li>
                 <li><b>Folium</b> is a library that uses JavaScript leaflet.js module in the background and it enables interactive map visualizations in Python.</li>
-                <li>In this example, I am using folium, folium plugins such as HeatMap and MarkerCluster, and geopandas Python libraries. </li>
+                <li>In this example, I am analyzing tree species published by the City of Victoria's <a href="https://opendata.victoria.ca/datasets/36e90771770542baaa89afddce69195a_15/explore" target="_blank">Open Data</a> portal using <a href = "https://python-visualization.github.io/folium/latest/" target="_blank">Folium</a>, folium plugins such as HeatMap and MarkerCluster, and <a href="https://geopandas.org/en/stable/" target="_blank">geopandas</a> Python libraries. </li>
                 <li>In the first step, I set up a Open Street Basemap with zoomed in view on the <b>City of Victoria</b> coordinates.</li>
                 <li>Next, we read a shapefile representing locations of Garry Oak tree species in the City of Victoria. Using a for loop on the <b>geopandas</b> dataframe, I am creating markers for each tree location.</li>
-                <li>However, this map is not easy to read, therefore, in the next step I use MarkerCluster to create <b>clusters</b> with number of trees in each cluster. </li>
-                <li>Another form of symbolization is using Folium Circles of specified radius and color.</li>
-                <li>Finally, I am using the <b>heatmap</b> plugin to visualize the distribution of Garry Oak trees around the city where brighter yellow/orange represent high density of these species.</li>
+                <li>However, this map is not easy to read, therefore, in the next step I use MarkerCluster to create <b>clusters</b> with number of trees in each cluster. Another form of symbolization is using Folium Circles of specified radius and color.</li>
+                <li>Finally, I am using the <b>heatmap</b> plugin to visualize the distribution of Garry Oak trees where brighter yellow/orange represent higher density.</li>
                 
               </ul>
             </aside>
