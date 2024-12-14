@@ -95,29 +95,25 @@
             <header class="page-header">
                     <h2 class="custom-header">Garry Oaks of Victoria using Folium</h2><br>
             </header>
-            <article class="col-sm-8">
+            <article class="col-sm-12">
+              <div class="col-sm-12">
+                <ul class="list-group">
+                  <p>The maps below visualize the distribution of <b>Garry Oak/ Oregon White Oak</b> tree species in the <b>City of Victoria</b> using <b>Folium</b>, a Python library that utilizes JavaScript leaflet.js module for interactive map visualizations. The data comes from the City of Victoria's <b><a href="https://opendata.victoria.ca/datasets/36e90771770542baaa89afddce69195a_15/explore" target="_blank">Open Data</a></b> portal, and I analyze it with <a href = "https://python-visualization.github.io/folium/latest/" target="_blank">Folium</a> plugins such as HeatMap and MarkerCluster, and <a href="https://geopandas.org/en/stable/" target="_blank">GeoPandas</a> Python libraries. <br>The process begins by setting up a basemap centered on the <b>City of Victoria</b> coordinates. Next, I load a shapefile containing the locations of Garry Oak trees and, using a for loop on the <b>GeoPandas</b> dataframe, I generate markers for each tree. To improve map readability, I use <b>MarkerCluster</b> to group nearby trees into clusters, displaying the number of trees per cluster, and apply <b>Folium Circles</b> for additional symbolization with custom radius and color. Finally, I use the <b>HeatMap</b> plugin to visualize tree density, where brighter yellow/orange colors indicate higher concentrations of Garry Oak trees.</p>
                   
-              <div class="your-class">
+                </ul>
+              </div>  
+
+              <div class="your-class col-sm-12">
                 <div><a href="Images/Folium1.png" target="_blank"><img src="Images/Folium1.png"></a></div>
                 <div><a href="Images/Folium2.png" target="_blank"><img src="Images/Folium2.png"></a></div>
                 <div><a href="Images/Folium3.png" target="_blank"><img src="Images/Folium3.png"></a></div>
                 <div><a href="Images/Folium4.png" target="_blank"><img src="Images/Folium4.png"></a></div>
                 <div><a href="Images/Folium5.png" target="_blank"><img src="Images/Folium5.png"></a></div>
-              </div><br>
+              </div>
+              
             </article>
             <!-- /Article -->
-            <aside class="col-sm-4 sidebar sidebar-right">
-              <ul class="list-group">
-                <li>Maps showing <b>Garry Oak/ Oregon White Oak</b> tree species distribution in the City of Victoria</li>
-                <li><b>Folium</b> is a library that uses JavaScript leaflet.js module in the background and it enables interactive map visualizations in Python.</li>
-                <li>In this example, I am analyzing tree species published by the City of Victoria's <a href="https://opendata.victoria.ca/datasets/36e90771770542baaa89afddce69195a_15/explore" target="_blank">Open Data</a> portal using <a href = "https://python-visualization.github.io/folium/latest/" target="_blank">Folium</a>, folium plugins such as HeatMap and MarkerCluster, and <a href="https://geopandas.org/en/stable/" target="_blank">geopandas</a> Python libraries. </li>
-                <li>In the first step, I set up a Open Street Basemap with zoomed in view on the <b>City of Victoria</b> coordinates.</li>
-                <li>Next, we read a shapefile representing locations of Garry Oak tree species in the City of Victoria. Using a for loop on the <b>geopandas</b> dataframe, I am creating markers for each tree location.</li>
-                <li>However, this map is not easy to read, therefore, in the next step I use MarkerCluster to create <b>clusters</b> with number of trees in each cluster. Another form of symbolization is using Folium Circles of specified radius and color.</li>
-                <li>Finally, I am using the <b>heatmap</b> plugin to visualize the distribution of Garry Oak trees where brighter yellow/orange represent higher density.</li>
-                
-              </ul>
-            </aside>
+            
           </div>
             <div class="row">
               <h5>Same heat map but an interactive ArcGIS Web map...</h5>
