@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    
+    <title>Lavanya- ArcGIS Dashboards</title>
+
+    <link rel="stylesheet" href="slick.css"/>
+	<link rel="stylesheet" href="slick-theme.css"/>
+
+
+    <link rel="shortcut icon" href="Images/favicon-32x32.png">
+    
+    <!-- Bootstrap -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+    <!-- Icon font -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="Home.css">
+    
+   
+
+  </head>
+  
+  <body>
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+
+    <header id="header">
+      <div id="head" class="parallax" parallax-speed="2">
+          <h1 id="logo" class="text-center">
+            <a href="https://lavs5.github.io/" target="_self"><img class="img-circle" src="Images/Photo_lavs.jpg"></a>
+            <span class="title"><strong>Lavanya Gopal</strong></span>
+              <span class="tagline">
+                  <strong>GIS | Data Science | Remote Sensing | Engineering</strong>
+              
+                  <span class="widget-body">
+                      <a href="mailto:lavgopal9@gmail.com" style="color: #ffffff">
+                          <i class="fa fa-envelope-o fa-fw"></i></a>
+                          <a href="https://www.linkedin.com/in/lavanyagopal/" target="_blank" style="color: #ffffff">
+                          <i class="fa fa-linkedin fa-2"></i></a>       
+                  </span>	
+              </span>
+          </h1>
+      </div>
+  
+      <nav class="navbar navbar-default navbar-sticky">
+          <div class="container-fluid">
+  
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="true" > 
+                      <span class="sr-only">Toggle navigation</span> 
+                      <span class="icon-bar"></span> 
+                      <span class="icon-bar"></span> 
+                      <span class="icon-bar"></span> 
+                  </button>
+              </div>
+  
+              <div class="navbar-collapse collapse">
+  
+                  <ul class="nav navbar-nav">
+                      <li><a href="https://lavs5.github.io/" class="highlight">
+                          <strong>Home</strong></a></li>
+                      <li><a href="Resume.html" class="highlight">Resume</a></li>
+                      <li><a href="Blog.html" class="highlight">Blog</a></li>
+                  </ul>
+  
+              </div>
+          </div>
+      </nav>
+    </header>
+    <main id="main">
+
+        <div class="container">  
+          <div class="row topspace">
+              <header class="page-header">
+                    <h2 class="custom-header">ArcGIS Dashboards: City of Victoria Tree Species</h2><br>
+                </header>
+              <!-- Article main content -->
+            <article class="col-sm-12">
+                <div class="col-sm-12">
+                    <ul class="list-group">
+                        <p>
+                            <b>ArcGIS Dashboards</b> is a web application for creating and sharing interactive dashboards that visualize and analyze data in real-time. Users can be customize dashboards with various widgets like maps, charts, and gauges, filtering and drilling down into the data to gain deeper insights.
+                            <br><br>
+                            The <b><a href="https://www.arcgis.com/apps/dashboards/1f74fb13628f4703aff07b71833a69e6" target="_blank">Tree Species Dashboard</a></b> was created using open data published by the <b><a href = "https://opendata.victoria.ca/search" target="_blank">City of Victoria</a></b>, BC. This dashboard provides an overview of the tree species in the city, including their distribution and dimensions. It allows users to <b>filter</b> the data by species and location, providing a visual representation of the metrics as they <b>interact with the map and the chart</b>.
+
+                        </p>
+                    </ul>
+                </div>
+                
+                <div class="your-class col-sm-12">
+                    <iframe src="https://www.arcgis.com/apps/dashboards/1f74fb13628f4703aff07b71833a69e6" width="100%" height="800px" frameborder="0" allowfullscreen allow="geolocation"></iframe>
+                </div>    
+                
+            </article>
+          </div>
+          
+        </div>
+
+    
+      
+    </main>
+
+   <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="template.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('.your-class').slick({
+            arrows: true,
+            dots: true,
+            adaptiveHeight: true,
+            fade: true,
+            autoplay: true
+          });
+        });
+    </script>  
+   
+    
+  </body>
+</html>
