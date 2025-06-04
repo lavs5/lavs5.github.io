@@ -296,15 +296,15 @@ body {
     text-shadow: 0 1px 0px #780d33;
   }
   .btn-primary {
-    color: #fff;
-    background-color: #bd1550;
+    color: #ffffff;
+    background-color: #076905;
   }
   .btn-primary:hover,
   .btn-primary:focus,
   .btn-primary:active,
   .btn-primary.active {
     color: #fff;
-    background-color: #e61f65;
+    background-color: #19946f;
   }
   .btn-action {
     font-weight: bold;
@@ -316,8 +316,8 @@ body {
   .btn-action:focus,
   .btn-action:active,
   .btn-action.active {
-    color: #bd1550;
-    border-color: #bd1550;
+    color: #076905;
+    border-color: #076905;
   }
   .btn-lg {
     padding: 15px 60px;
