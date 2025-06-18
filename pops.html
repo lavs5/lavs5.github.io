@@ -76,34 +76,45 @@
         <div class="container">  
           <div class="row topspace">
               <header class="page-header">
-                    <h2 class="custom-header">Choropleth Map of Population and Dwelling Counts 2021</h2><br>
-                </header>
+                <h2 class="custom-header">Census Data and Choropleth Maps</h2><br>
+              </header>
+
               <!-- Article main content -->
             <article class="col-sm-12">
                 <div class="col-sm-12">
                     <ul class="list-group">
-                        <li><a href="https://www.statcan.gc.ca/en/start" target="_blank">Statistics Canada</a> publishes population datasets every five years, this data is based on the Census of Population, 2021. To perform this analysis, we use two files: <a href="https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21" target="_blank">Boundary files</a> by dissemination areas and <a href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810001501" target="_blank"> Population and Dwelling counts</a> csv. These files have a common identifier <a href="https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/Definition-eng.cfm?ID=geo055" target="_blank">DGUID</a> (statistical) and therefore, we can use Add Join function to combine these two datasets.</li>
-                        <li>The first map below is the <b>Population Density</b> per sq km  filtered by Nanaimo, symbolized using Natural Breaks method and calculated using the raw population count Normalized by land area i.e. number of individuals per unit land area. And the second map is a comparison of private dwellings count vs. population count using <b>Bivariate</b> symbolization to visualize areas with Low-Low, Low-High, High-Low, and High-High relationship.</li>
+                        <p><b>Census data</b> provides detailed information about population, demographics, and socioeconomic factors. <b>Choropleth</b> maps use color shading to visualize these data across geographic areas, making patterns and trends easy to interpret.</p><br> 
+                        <p>This map analyzes census tract-level data from the state of Georgia, with a focus on counties surrounding Atlanta where notable trends emerge in population density, median income, and education levels. Using choropleth maps, the visualization effectively highlights geographic disparities and reveals a clear pattern: <b>densely populated areas tend to exhibit higher median incomes and a greater proportion of residents with at least a bachelor’s degree</b>. These findings suggest a strong link between urban density, educational levels, and economic opportunity. This trend is particularly pronounced in the <b>Atlanta metropolitan area</b>, where urbanization has led to significant economic growth, expanded access to higher education institutions and employment opportunities.</p><br>
+                        <p>All data used in this analysis is sourced from the <a href="https://www.census.gov/programs-surveys/acs" target="_blank">American Community Survey (ACS)</a> and made available through the Esri Online Library.
+                        </p>
+                        
                     </ul>
                 </div>
                 <div class="your-class col-sm-12">
                     
-                    <div><a href="Images/popdens.png" target="_blank"><img src="Images/popdens.png"></a></div>
-                    <div><a href="Images/hsg.png" target="_blank"><img src="Images/hsg.png"></a></div>
+                    <div><a href="Images/GA_Pops.png" target="_blank"><img src="Images/GA_Pops.png"></a></div>
+                    <div><a href="Images/GA_PopDens.png" target="_blank"><img src="Images/GA_PopDens.png"></a></div>
+                    <div><a href="Images/GA_County_PopDens.png" target="_blank"><img src="Images/GA_County_PopDens.png"></a></div>
+                    <div><a href="Images/GA_County_Income.png" target="_blank"><img src="Images/GA_County_Income.png"></a></div>
+                    <div><a href="Images/GA_County_Edu.png" target="_blank"><img src="Images/GA_County_Edu.png"></a></div>
                 </div>
-                
+                <br><br>
             </article>
           </div>
           
-          <div class="your-class col-sm-12">
-            <ul class="list-group"><a href="https://storymaps.arcgis.com/stories/2d02e7adf5824ff29de45a8136c87036" target="_blank"><h5>An  interactive version...</a></h5></ul>
-            
-          </div>     
-          <div class="your-class col-sm-12">
-            
-            <iframe src="https://storymaps.arcgis.com/stories/2d02e7adf5824ff29de45a8136c87036" width="100%" height="800px" frameborder="0" allowfullscreen allow="geolocation"></iframe>
-          </div>  
-          
+          <article class="col-sm-12">
+              <div class="col-sm-12">
+                <p> Similarly, using census data published by Statistics Canada, the following <a href="https://storymaps.arcgis.com/stories/2d02e7adf5824ff29de45a8136c87036" target="_blank">story map</a> explores population and housing trends in Nanaimo through a combination of dot density, choropleth, and bivariate maps. The story map offers both a broad overview and focused insights into specific neighborhoods, including Downtown Nanaimo, Parksville, and Departure Bay — areas where clear patterns and trends emerge. Notably, the housing map highlights a shortage of housing availability in these densely populated regions.
+                </p><br>
+                <p>All data used in this analysis is sourced from the <a href="https://www12.statcan.gc.ca/census-recensement/index-eng.cfm" target="_blank">2021 Census of Population</a>.</p>
+                <br><br>
+              </div>
+          </article>
+          <br>
+
+        </div>
+        <div class="your-class col-sm-12">   
+                <iframe src="https://storymaps.arcgis.com/stories/2d02e7adf5824ff29de45a8136c87036" width="100%" height="800px" frameborder="0" allowfullscreen allow="geolocation"></iframe>
         </div>
 
     

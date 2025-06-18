@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        
+        <title>Lavanya- Leaflet Web Map</title>
+        
+        <link rel="shortcut icon" href="Images/favicon-32x32.png">
+        
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+        
+        <!-- Bootstrap -->
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+        <!-- Icon font -->
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+        <!-- Custom styles -->
+        <link rel="stylesheet" href="Home.css">
+
+        <style>
+            
+            
+            /*configure map size, border, align to page center*/
+            #map{
+                width: 100%;
+                height: 100vh;
+            }
+        </style>
+
+        
+    </head>
+    <body>
+        <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+        <header id="header">
+        <div id="head" class="parallax" parallax-speed="2">
+            <h1 id="logo" class="text-center">
+                <a href="https://lavs5.github.io/" target="_self"><img class="img-circle" src="Images/Photo_lavs.jpg"></a>
+                <span class="title"><strong>Lavanya Gopal</strong></span>
+                <span class="tagline">
+                    <strong>GIS | Data Science | Remote Sensing | Engineering</strong>
+                
+                    <span class="widget-body">
+                        <a href="mailto:lavgopal9@gmail.com" style="color: #ffffff">
+                            <i class="fa fa-envelope-o fa-fw"></i></a>
+                            <a href="https://www.linkedin.com/in/lavanyagopal/" target="_blank" style="color: #ffffff">
+                            <i class="fa fa-linkedin fa-2"></i></a>       
+                    </span>	
+                </span>
+            </h1>
+        </div>
+            <nav class="navbar navbar-default navbar-sticky">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="true" > 
+                        <span class="sr-only">Toggle navigation</span> 
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                    </button>
+                </div>
+
+                <div class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="https://lavs5.github.io/" class="highlight">
+                            <strong>Home</strong></a></li>
+                        <li><a href="Resume.html" class="highlight">Resume</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        </header>
+        <main id="main">
+            <div class="container">  
+                <div class="row topspace">
+                    <header class="page-header">
+                        <h2 class="custom-header">Leaflet Web Map</h2><br>
+                    </header>
+                    <!-- Article main content -->
+                    <article class="col-md-12">
+                        
+                        <div id="map"></div>
+                    </article>
+                </div>
+            </div>
+        
+        
+        </main>
+
+        <!-- Leaflet Script -->  
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="template.js"></script>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="slick.js" async></script>
+
+        
+
+
+    </body>
+</html>
+
+
+<script>
+    // Initialize the map and set its view to Victoria, BC and zoom level 12
+    var map = L.map('map').setView([48.4284, -123.3656], 12);
+
+    // Add OpenStreetMap tile layer
+   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add a marker for the Parliament Buildings
+    var marker = L.marker([48.4233, -123.3656]).addTo(map);
+    marker.bindPopup("<b>Parliament Buildings</b><br>Victoria, BC").openPopup();
+
+
+    // Add a scale bar to the map
+    L.control.scale().addTo(map);
+    // Add a layer control to switch between base layers
+    var baseLayers = {
+        "OpenStreetMap": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        })
+    };
+
+   
+</script>
