@@ -5,7 +5,7 @@
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     
-    <title>Lavanya- Dashboards</title>
+    <title>Lavanya- SAR Flood Detection</title>
 
     <link rel="stylesheet" href="slick.css"/>
 	<link rel="stylesheet" href="slick-theme.css"/>
@@ -76,44 +76,33 @@
         <div class="container">  
           <div class="row topspace">
               <header class="page-header">
-                    <h2 class="custom-header">Dashboards: City of Victoria Tree Species</h2><br>
+                    <h2 class="custom-header">Flood Mapping using Sentinel-1 Synthetic Aperture Radar (SAR) Imagery</h2><br>
                 </header>
               <!-- Article main content -->
             <article class="col-sm-12">
                 <div class="col-sm-12">
                     <ul class="list-group">
-                        <p>Dashboards are dynamic tools that enable users to visualize and interact with data in real time, offering a clear and comprehensive view of key metrics, trends, and patterns. Platforms such as <b>ArcGIS Dashboards, Google Looker, and Microsoft Power BI</b> make it easy to build intuitive, data-rich visualizations tailored to various audiences and purposes. Below are examples of dashboards created using these tools, leveraging open data published by the <b><a href = "https://opendata.victoria.ca/search" target="_blank">City of Victoria</a></b>, BC.</p>
-
-                        <br>
-                        
-                        
-
+                        <p>
+                          Flood mapping using <b>Sentinel-1 SAR imagery</b> involves the use of radar data to detect and monitor flood events. The advantage of using SAR imagery is its ability to penetrate cloud cover and capture images during both day and night, making it a valuable tool for disaster response and management. Take a look at this example: <b>Valencia, Spain</b> experienced a significant flood event in October 2024, which was captured using Sentinel-1 SAR imagery. The images show the area before and after the flood, highlighting the extent of the inundation.<br> This analysis was conducted using Sentinel-1 SAR imagery available through <b>Google Earth Engine</b>. The script uses a simple subtraction method to create a flood map by comparing pre-flood and post-flood images. The non-flooded areas are masked out, and the resulting flood map is then visualized using a color ramp to enhance the visibility of the flooded areas.<br>
+                        </p>
                     </ul>
                 </div>
-                <p><b><a href="https://www.arcgis.com/apps/dashboards/1f74fb13628f4703aff07b71833a69e6" target="_blank">Dashboard created using ArcGIS Dashboards:</a></b></p>
-                <br>
-                <div class="your-class col-sm-12">
-                    <iframe src="https://www.arcgis.com/apps/dashboards/1f74fb13628f4703aff07b71833a69e6" width="100%" height="800px" frameborder="0" allowfullscreen allow="geolocation"></iframe>
-                </div>
-                <br>
-                <p><b><a href="https://lookerstudio.google.com/reporting/57edf6d3-ed49-41c9-8365-b49fd20e8a46" target="_blank">Dashboard created using Google Looker:</a></b></p>
-                <br>
-                <div class="your-class col-sm-12">
-                    <iframe width="100%" height="800px" src="https://lookerstudio.google.com/embed/reporting/57edf6d3-ed49-41c9-8365-b49fd20e8a46/page/4WNPF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
-                </div>
-                <br>
-                <p><b><a href="Images/Tree_PowerBI.png" target="_blank">Dashboard created using Microsoft Power BI:</a></b></p>
-                <br>
                 <div class="your-class col-sm-12" style="text-align: center;">
-                    <div><a href="Images/Tree_PowerBI.png" target="_blank"><img src="Images/Tree_PowerBI.png" style="display: inline-block"></a></div>
+                    <div><a href="Images/SAR_Valencia.png" target="_blank"><img src="Images/SAR_Valencia.png" style="display: inline-block"></a></div>
+                    <div><a href="Images/SAR_Before.png" target="_blank"><img src="Images/SAR_Before.png" style="display: inline-block"></a></div>
+                    <div><a href="Images/SAR_After.png" target="_blank"><img src="Images/SAR_After.png" style="display: inline-block"></a></div>
+                    <div><a href="Images/SAR_Differ.png" target="_blank"><img src="Images/SAR_Differ.png" style="display: inline-block"></a></div>
+                    <div><a href="Images/SAR_Flood.png" target="_blank"><img src="Images/SAR_Flood.png" style="display: inline-block"></a></div>
+                    <div><a href="Images/SAR_Script.png" target="_blank"><img src="Images/SAR_Script.png" style="display: inline-block"></a></div>
                 </div>
-                   
                 
+            
             </article>
           </div>
           
         </div>
-        
+
+    
       
     </main>
 

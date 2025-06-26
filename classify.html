@@ -5,7 +5,7 @@
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     
-    <title>Lavanya- Dashboards</title>
+    <title>Lavanya- Land Cover Classification</title>
 
     <link rel="stylesheet" href="slick.css"/>
 	<link rel="stylesheet" href="slick-theme.css"/>
@@ -76,44 +76,40 @@
         <div class="container">  
           <div class="row topspace">
               <header class="page-header">
-                    <h2 class="custom-header">Dashboards: City of Victoria Tree Species</h2><br>
+                    <h2 class="custom-header">Land Cover Classification using Machine Learning & Sentinel-2 Imagery</h2><br>
                 </header>
               <!-- Article main content -->
             <article class="col-sm-12">
                 <div class="col-sm-12">
                     <ul class="list-group">
-                        <p>Dashboards are dynamic tools that enable users to visualize and interact with data in real time, offering a clear and comprehensive view of key metrics, trends, and patterns. Platforms such as <b>ArcGIS Dashboards, Google Looker, and Microsoft Power BI</b> make it easy to build intuitive, data-rich visualizations tailored to various audiences and purposes. Below are examples of dashboards created using these tools, leveraging open data published by the <b><a href = "https://opendata.victoria.ca/search" target="_blank">City of Victoria</a></b>, BC.</p>
-
-                        <br>
-                        
-                        
-
+                        <p>
+                          Land cover classification using <b>Sentinel-2</b> satellite imagery leverages multi-spectral data to identify and categorize surface features. This project used supervised classification techniques, which involved generating training samples, teaching the model to recognize spectral signatures, and classifying the imagery into distinct land cover types. I applied three machine learning algorithms— <b>Classification and Regression Tree (CART), Random Forest (RF), and Support Vector Machine (SVM)</b>—to distinguish between classes such as water, forest, grassland, and urban areas. Classification accuracy was assessed using a confusion matrix, overall accuracy, and the <b>Kappa coefficient</b>. The results demonstrate the robustness of machine learning approaches in extracting meaningful insights from satellite imagery. Scroll down to explore results from the classification process.
+                        </p>
                     </ul>
                 </div>
-                <p><b><a href="https://www.arcgis.com/apps/dashboards/1f74fb13628f4703aff07b71833a69e6" target="_blank">Dashboard created using ArcGIS Dashboards:</a></b></p>
-                <br>
-                <div class="your-class col-sm-12">
-                    <iframe src="https://www.arcgis.com/apps/dashboards/1f74fb13628f4703aff07b71833a69e6" width="100%" height="800px" frameborder="0" allowfullscreen allow="geolocation"></iframe>
-                </div>
-                <br>
-                <p><b><a href="https://lookerstudio.google.com/reporting/57edf6d3-ed49-41c9-8365-b49fd20e8a46" target="_blank">Dashboard created using Google Looker:</a></b></p>
-                <br>
-                <div class="your-class col-sm-12">
-                    <iframe width="100%" height="800px" src="https://lookerstudio.google.com/embed/reporting/57edf6d3-ed49-41c9-8365-b49fd20e8a46/page/4WNPF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
-                </div>
-                <br>
-                <p><b><a href="Images/Tree_PowerBI.png" target="_blank">Dashboard created using Microsoft Power BI:</a></b></p>
-                <br>
                 <div class="your-class col-sm-12" style="text-align: center;">
-                    <div><a href="Images/Tree_PowerBI.png" target="_blank"><img src="Images/Tree_PowerBI.png" style="display: inline-block"></a></div>
+                    <div><a href="Images/Class_S2.png" target="_blank"><img src="Images/Class_S2.png" style="display: inline-block"></a></div>
+                    <div><a href="Images/Class_S2_Samples.png" target="_blank"><img src="Images/Class_S2_Samples.png" style="display: inline-block"></a></div>
+                    <div><a href="Images/Class_S2_CART.png" target="_blank"><img src="Images/Class_S2_CART.png" style="display: inline-block"></a></div>
+                    <div><a href="Images/Class_S2_RF.png" target="_blank"><img src="Images/Class_S2_RF.png" style="display: inline-block"></a></div>
+                    <div><a href="Images/Class_S2_SVM.png" target="_blank"><img src="Images/Class_S2_SVM.png" style="display: inline-block"></a></div>
+
+                    <div><a href="Images/Class_Script_1.png" target="_blank"><img src="Images/Class_Script_1.png" style="display: inline-block"></a></div>
+                    <div><a href="Images/Class_Script_2.png" target="_blank"><img src="Images/Class_Script_2.png" style="display: inline-block"></a></div>
+                    <div><a href="Images/Class_Script_3.png" target="_blank"><img src="Images/Class_Script_3.png" style="display: inline-block"></a></div>
+                    <div><a href="Images/Class_Script_4.png" target="_blank"><img src="Images/Class_Script_4.png" style="display: inline-block"></a></div>
+                    
+
+
                 </div>
-                   
                 
+            
             </article>
           </div>
           
         </div>
-        
+
+    
       
     </main>
 
