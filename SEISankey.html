@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    
+    <title>Lavanya- SEI Sankey</title>
+
+    <link rel="stylesheet" href="slick.css"/>
+	<link rel="stylesheet" href="slick-theme.css"/>
+
+
+    <link rel="shortcut icon" href="Images/favicon-32x32.png">
+    
+    <!-- Bootstrap -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+    <!-- Icon font -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="Home.css">
+    
+   
+
+  </head>
+  
+  <body>
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+
+    <header id="header">
+      <div id="head" class="parallax" parallax-speed="2">
+          <h1 id="logo" class="text-center">
+            <a href="https://lavs5.github.io/" target="_self"><img class="img-circle" src="Images/Photo_lavs.jpg"></a>
+            <span class="title"><strong>Lavanya Gopal</strong></span>
+              <span class="tagline">
+                  <strong>GIS | Data Science | Remote Sensing | Engineering</strong>
+              
+                  <span class="widget-body">
+                      <a href="mailto:lavgopal9@gmail.com" style="color: #ffffff">
+                          <i class="fa fa-envelope-o fa-fw"></i></a>
+                          <a href="https://www.linkedin.com/in/lavanyagopal/" target="_blank" style="color: #ffffff">
+                          <i class="fa fa-linkedin fa-2"></i></a>       
+                  </span>	
+              </span>
+          </h1>
+      </div>
+  
+      <nav class="navbar navbar-default navbar-sticky">
+          <div class="container-fluid">
+  
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="true" > 
+                      <span class="sr-only">Toggle navigation</span> 
+                      <span class="icon-bar"></span> 
+                      <span class="icon-bar"></span> 
+                      <span class="icon-bar"></span> 
+                  </button>
+              </div>
+  
+              <div class="navbar-collapse collapse">
+  
+                  <ul class="nav navbar-nav">
+                      <li><a href="https://lavs5.github.io/" class="highlight">
+                          <strong>Home</strong></a></li>
+                      <li><a href="Resume.html" class="highlight">Resume</a></li>
+                  </ul>
+  
+              </div>
+          </div>
+      </nav>
+    </header>
+    <main id="main">
+
+        <div class="container">  
+          <div class="row topspace">
+              <header class="page-header">
+                    <h2 class="custom-header">Sensitive Ecosystem Inventory</h2><br>
+                </header>
+              <!-- Article main content -->
+            <article class="col-sm-12">
+                <div class="col-sm-12">
+                    <ul class="list-group">
+                        <p>An <b>ecosystem</b> refers to a section of the landscape characterized by relatively uniform dominant vegetation. A <b>sensitive ecosystem</b>, in contrast, is one considered rare, fragile, or especially vulnerable to disturbance. The <b>east coast of Vancouver Island</b> is among only four critical areas in Canada where remnants of natural ecosystems persist, now surviving as fragmented patches amid growing development. The <b>Sensitive Ecosystem Inventory (SEI)</b> aims to support land-use planning and guide conservation efforts by identifying and mapping these vital landscapes. To visualize the scale and nature of ecosystem change, <b>Sankey</b> diagrams can be used. These flow diagrams illustrate transitions such as from one land cover type to another over time. The width of each flow is proportional to the magnitude of change, clearly conveying which ecosystems were retained, degraded, or converted. <br>The <b>interactive Sankey dashboard</b> created in Google Looker Studio highlights how ecosystems across the study area evolved between <b>1992 and 2014</b>. Explore the dashboard and map below to see where and how sensitive ecosystems were impacted over time.</p>
+                        <br>
+
+                    </ul>
+                </div>
+                <p><b><a href="https://lookerstudio.google.com/reporting/fb9beeed-4cbc-4e73-8136-7d1a538a3491" target="_blank">SEI Sankey Dashboard:</a></b></p>
+                <br>
+                <iframe width="100%" height="900px" src="https://lookerstudio.google.com/embed/reporting/fb9beeed-4cbc-4e73-8136-7d1a538a3491/page/page_12345" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+                <br>
+                <p><b><a href="Images/SEILoss_Lavanya.pdf" target="_blank">SEI Map:</a></b></p>
+                <br>
+                <div class="your-class col-sm-12" style="text-align: center;">
+                    <div><a href="Images/SEILoss.png" target="_blank"><img src="Images/SEILoss.png" style="display: inline-block"></a></div>
+                </div>
+                <br>
+                
+                   
+                
+            </article>
+          </div>
+          
+        </div>
+        
+      
+    </main>
+
+   <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="template.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('.your-class').slick({
+            arrows: true,
+            dots: true,
+            adaptiveHeight: true,
+            fade: true,
+            autoplay: true
+          });
+        });
+    </script>  
+   
+    
+  </body>
+</html>
