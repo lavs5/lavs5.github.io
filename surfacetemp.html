@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    
+    <title>Lavanya- Land Surface Temperature</title>
+
+    <link rel="stylesheet" href="slick.css"/>
+	<link rel="stylesheet" href="slick-theme.css"/>
+
+
+    <link rel="shortcut icon" href="Images/favicon-32x32.png">
+    
+    <!-- Bootstrap -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+    <!-- Icon font -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="Home.css">
+   
+
+  </head>
+  
+  <body>
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+
+    <header id="header">
+      <div id="head" class="parallax" parallax-speed="2">
+          <h1 id="logo" class="text-center">
+            <a href="https://lavs5.github.io/" target="_self"><img class="img-circle" src="Images/Photo_lavs.jpg"></a>
+            <span class="title"><strong>Lavanya Gopal</strong></span>
+              <span class="tagline">
+                  <strong>GIS | Data Science | Remote Sensing | Engineering</strong>
+              
+                  <span class="widget-body">
+                      <a href="mailto:lavgopal9@gmail.com" style="color: #ffffff">
+                          <i class="fa fa-envelope-o fa-fw"></i></a>
+                          <a href="https://www.linkedin.com/in/lavanyagopal/" target="_blank" style="color: #ffffff">
+                          <i class="fa fa-linkedin fa-2"></i></a>       
+                  </span>	
+              </span>
+          </h1>
+      </div>
+  
+      <nav class="navbar navbar-default navbar-sticky">
+          <div class="container-fluid">
+  
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="true" > 
+                      <span class="sr-only">Toggle navigation</span> 
+                      <span class="icon-bar"></span> 
+                      <span class="icon-bar"></span> 
+                      <span class="icon-bar"></span> 
+                  </button>
+              </div>
+  
+              <div class="navbar-collapse collapse">
+  
+                  <ul class="nav navbar-nav">
+                      <li><a href="https://lavs5.github.io/" class="highlight">
+                          <strong>Home</strong></a></li>
+                      <li><a href="Resume.html" class="highlight">Resume</a></li>
+                  </ul>
+  
+              </div>
+          </div>
+      </nav>
+    </header>
+    <main id="main">
+
+        <div class="container">  
+          <div class="row topspace">
+              <header class="page-header">
+                    <h2 class="custom-header">Vancouver Island Surface Temperature 2023-2024</h2><br>
+                </header>
+              <!-- Article main content -->
+            <article class="col-sm-12">
+                <div class="col-sm-12">
+                    <ul class="list-group">
+                        <p>
+                            This project explores seasonal variations in land surface temperature (LST) across <b>Vancouver Island, British Columbia</b>, using thermal infrared data from the <b>Landsat 8 </b>satellite. Focusing on the period between <b>October 2023 and August 2024</b>, it highlights patterns during the city's coldest and hottest months. Using Google Earth Engine (GEE), the application includes calculation of <b>median LST</b> for winter and summer periods, <b>time-series analysis</b> to observe temperature fluctuations over time, and <b>interactive visualization</b> for spatial patterns and extremes. The final product is a dynamic web application that allows users to click anywhere within the island boundary to retrieve the median temperature for that location, offering a hands-on way to explore climate variability. <br>
+                            View the code: <b><a href = "https://code.earthengine.google.com/ca9231d2eb5e00ca538aecce11c1ab3c?noload=true" target="_blank">GEE script</a></b> and explore the map below:<b> <a href= "https://ee-lavs.projects.earthengine.app/view/surface-temperature-nanaimo" target="_blank">Vancouver Island Surface Temperature</a></b>.
+                        </p>
+                     </ul>
+                </div>                             
+                
+            </article>
+          </div>
+          
+        </div>
+
+        <div class="your-class col-sm-12">
+          <iframe src="https://ee-lavs.projects.earthengine.app/view/surface-temperature-nanaimo" width="100%" height="800px" frameborder="0" allowfullscreen></iframe>
+        </div> 
+
+    </main>
+
+   <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="template.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('.your-class').slick({
+            arrows: true,
+            dots: true,
+            adaptiveHeight: true,
+            fade: true,
+            autoplay: true
+          });
+        });
+    </script>  
+   
+    
+  </body>
+</html>
