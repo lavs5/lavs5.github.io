@@ -81,24 +81,54 @@
               <!-- Article main content -->
             <article class="col-sm-12">
                 <div class="col-sm-12">
-                    <ul class="list-group">
+                    
                         <p>
-                            <b>One Dataset, Multiple Visualizations</b>
-                            <br>
+                            <b>One Dataset, Multiple Visualizations:</b> This is a collection of thematic maps I saw at the Esri User Conference 2025, presented by John Nelson, Ken Field, and other awesome GIS Pros. I decided to recreate some of those maps using the UN World Happiness Index dataset (credits: John Nelson), which ranks countries based on their happiness levels. The dataset includes various factors such as GDP per capita, social support, life expectancy, freedom to make life choices, generosity, and perceptions of corruption. These maps are designed to visualize these factors in different ways, showcasing the power of thematic mapping in understanding complex data.
+                            <br><br>
+                            <b>ArcGIS Pro Static Maps: </b>
+                            <ul>
+                                <li><b>Choropleth</b> map with graduated colors representing Happiness Score for 2024</li>
+                                <li>Map where <b>lighter</b> color indicates happier countries, labeled with ranks</li>
+                                <li>Map where <b>darker</b> color indicates happier countries, labeled with ranks</li>
+                                <li>Map showing how well national statistics <b>predicted</b> happiness based on z-score</li>
+                                <li>Map showing <b>change in happiness score</b> from 2019 to 2024, labelled with extremes</li>
+                                <li>Map showing <b>change in health or life expectancy score</b> from 2019 to 2024, labelled with extremes</li>
+                                <li>Map highlighting countries that are more <b>generous despite low GDP</b> in 2024</li>
+                            </ul>
                         </p>
-                     </ul>
-                </div>                             
+                     
+                </div>                     
+                
+                <br>
+                
+                <div class="your-class col-sm-12">
+                    <div><a href="Images/Happy_1_SimpleChoropleth.png" target="_blank"><img src="Images/Happy_1_SimpleChoropleth.png"></a></div>
+                    <div><a href="Images/Happy_2_Lighter.png" target="_blank"><img src="Images/Happy_2_Lighter.png"></a></div>
+                    <div><a href="Images/Happy_3_Darker.png" target="_blank"><img src="Images/Happy_3_Darker.png"></a></div>
+                    <div><a href="Images/Happy_7_Prediction.png" target="_blank"><img src="Images/Happy_7_Prediction.png"></a></div>
+                    <div><a href="Images/Happy_4_Change.png" target="_blank"><img src="Images/Happy_4_Change.png"></a></div>
+                    <div><a href="Images/Happy_6_HealthChange.png" target="_blank"><img src="Images/Happy_6_HealthChange.png"></a></div>
+                    <div><a href="Images/Happy_5_Generosity.png" target="_blank"><img src="Images/Happy_5_Generosity.png"></a></div>
+                </div>  
+
+
+                <br>
+                <p>
+                  <b>ArcGIS Online Web Map</b>
+                  <br>
+                  The ArcGIS Online Web map below uses Arcade expressions to dynamically label countries based on the current map scale. You can use the bookmarks (found under (i) button in the map viewer) to quickly navigate and see how labels change at different zoom levels. For example, zooming in will show rank numbers, zooming in further will show rank, country name, and score, and zooming in even further shows all statistics.
+                </p>
+                <br>
+                <div class="your-class col-sm-12">
+                  <arcgis-embedded-map style="height:600px;width:700px;" item-id="78ef138b9c5f4a5fa19bab02bc4fc0b6" theme="dark" bookmarks-enabled heading-enabled legend-enabled share-enabled center="-0.08492804242097782,1.3756546605774813"scale="127293001.19744873" portal-url="https://viu.maps.arcgis.com" ></arcgis-embedded-map>
+                </div>
                 
             </article>
           </div>
           
         </div>
 
-        <div class="your-class col-sm-12">
-          
-        <!-- Add custom element to <body> of your page -->
-        <arcgis-embedded-map style="height:600px;width:700px;" item-id="78ef138b9c5f4a5fa19bab02bc4fc0b6" theme="dark" bookmarks-enabled heading-enabled legend-enabled share-enabled center="-0.08492804242097782,1.3756546605774813"scale="127293001.19744873" portal-url="https://viu.maps.arcgis.com" ></arcgis-embedded-map>
-        </div> 
+        
 
     </main>
 
