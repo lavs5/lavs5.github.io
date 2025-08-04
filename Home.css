@@ -821,3 +821,21 @@ html {
   height: 100%;
 }
 
+.elk-banner {
+  width: 100%;
+  height: 50px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cdefs%3E%3Cfilter id='shadow'%3E%3CfeDropShadow dx='1' dy='1' stdDeviation='1' flood-color='black' flood-opacity='0.3'/%3E%3C/filter%3E%3C/defs%3E%3Ctext x='0' y='24' font-size='24' filter='url(%23shadow)'%3E🦌%3C/text%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 32px 32px;
+  animation: scrollElk 35s linear infinite;
+}
+
+/* Animation to scroll background */
+@keyframes scrollElk {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
