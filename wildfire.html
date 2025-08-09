@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        
+        <title>Lavanya- Wildfire Smoke</title>
+        
+        <link rel="shortcut icon" href="Images/favicon-32x32.png">
+        
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+        
+        <!-- Bootstrap -->
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+        <!-- Icon font -->
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+        <!-- Custom styles -->
+        <link rel="stylesheet" href="Home.css">
+
+        <style>
+            
+            
+            /*configure map size, border, align to page center*/
+            #map{
+                width: 100%;
+                height: 100vh;
+            }
+        </style>
+
+        
+    </head>
+    <body>
+        <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+        <header id="header">
+        <div id="head" class="parallax" parallax-speed="2">
+            <h1 id="logo" class="text-center">
+                <a href="https://lavs5.github.io/" target="_self"><img class="img-circle" src="Images/Photo_lavs.jpg"></a>
+                <span class="title"><strong>Lavanya Gopal</strong></span>
+                <span class="tagline">
+                    <strong>GIS | Data Science | Remote Sensing | Engineering</strong>
+                
+                    <span class="widget-body">
+                        <a href="mailto:lavgopal9@gmail.com" style="color: #ffffff">
+                            <i class="fa fa-envelope-o fa-fw"></i></a>
+                            <a href="https://www.linkedin.com/in/lavanyagopal/" target="_blank" style="color: #ffffff">
+                            <i class="fa fa-linkedin fa-2"></i></a>       
+                    </span>	
+                </span>
+            </h1>
+        </div>
+            <nav class="navbar navbar-default navbar-sticky">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="true" > 
+                        <span class="sr-only">Toggle navigation</span> 
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                    </button>
+                </div>
+
+                <div class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="https://lavs5.github.io/" class="highlight">
+                            <strong>Home</strong></a></li>
+                        <li><a href="Resume.html" class="highlight">Resume</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        </header>
+        <main id="main">
+            <div class="container">  
+                <div class="row topspace">
+                    <header class="page-header">
+                        <h2 class="custom-header">🔥Carbon in the Air: Wildfire Smoke (July 29–Aug 4, 2025)🔥</h2><br>
+                    </header>
+                    <!-- Article main content -->
+                    <article class="col-sm-12">
+                        <p>Wildfires are a significant source of atmospheric organic carbon (OC), which can impact air quality, human health, and climate. The GIF below highlights OC emissions from wildfires across Canada during the period of <b>July 29 to August 4, 2025</b>. This map was created using NASA’s <a href = "https://gmao.gsfc.nasa.gov/" target="_blank"> Global Modeling and Assimilation Office Research Site (GMAO)</a> Organic Carbon data, processed in QGIS, and exported as a GIF using <a href="https://ezgif.com/maker" target="_blank">ezgif</a>. The workflow was adapted from a tutorial by <a href = "https://mhinfographics.com/2022/07/04/visualizing-organic-carbon-in-near-real-time-a-step-by-step-guide/" target="_blank">Marco Hernandez</a>.</p>
+                        
+                        <br>
+                        
+                        <div class="your-class col-sm-12">
+                            <div><a href="Images/WildfireCarbon_4.gif" target="_blank"><img src="Images/WildfireCarbon_4.gif"></a></div>
+                        </div>
+                        
+                        <br>
+                        
+                        <p> To complement the animation, the map below displays the <b>geographic distribution of active wildfires</b> using Natural Resources Canada’s WMS layer. This layer provides real-time fire location data sourced from the Canadian Wildland Fire Information System (CWFIS). <b>Citation:</b> Canadian Forest Service. 2022. Canadian Wildland Fire Information System (CWFIS), Natural Resources Canada, Canadian Forest Service, Northern Forestry Centre, Edmonton, Alberta. <a href="http://cwfis.cfs.nrcan.gc.ca" target="_blank">http://cwfis.cfs.nrcan.gc.ca</a>.</p>
+                        
+                        <br>
+
+                        <div id="map"></div>
+                    </article>
+                </div>
+            </div>
+        
+        
+        </main>
+
+        <!-- Leaflet Script -->  
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="template.js"></script>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="slick.js" async></script>
+
+        
+
+
+    </body>
+</html>
+
+
+<script>
+    // Initialize the map and set its view to Canada and zoom level 4
+    var map = L.map('map').setView([56.1304, -106.3468], 4);
+    
+    // Add a scale bar to the map
+    L.control.scale().addTo(map);
+    
+    // Add OpenStreetMap tile layer
+    var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add Esri Satellite tile layer
+    var esriSat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    });
+
+    var baseLayers = {
+        "OpenStreetMap": osmLayer,
+        "Satellite": esriSat
+    };
+
+    // Add a WMS layer for wildfire locations
+    var wildfireLayer = L.tileLayer.wms('https://cwfis.cfs.nrcan.gc.ca/geoserver/ows?', {
+      layers: 'activefires_current',
+      format: 'image/png',
+      transparent: true,
+      attribution: '© NRCan'
+    }).addTo(map);
+
+    // Add M3 polygons layer (estimated fire perimeters)
+    var m3Layer = L.tileLayer.wms('https://cwfis.cfs.nrcan.gc.ca/geoserver/public/wms', {
+    layers: 'm3_polygons_current',
+    format: 'image/png',
+    transparent: true,
+    attribution: '© NRCan'
+    })
+
+    var overlays = {
+        "Wildfire Locations": wildfireLayer,
+        "Fire Perimeters (M3)": m3Layer
+    };
+
+    // Add the layer control to the map
+    L.control.layers(baseLayers, overlays).addTo(map);
+
+    // Add legend for the wildfire layer
+    var legend = L.control({position: 'bottomleft'});
+    legend.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'info legend');
+        div.innerHTML += '<h4>Wildfire Locations</h4>';
+        div.innerHTML += '<img src="https://cwfis.cfs.nrcan.gc.ca/geoserver/public/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&LAYER=activefires_current" alt="Legend">';
+        return div;
+    };
+    legend.addTo(map);
+    
+    
+
+
+</script>
